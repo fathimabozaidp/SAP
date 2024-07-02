@@ -1,0 +1,112 @@
+<mvc:View controllerName="com.dpz_jsonmodelwithsimpleformandtable.controller.zstudentdetailsformandtableview"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Student Details" navButtonPress="navigateToDefaultView" showNavButton="true">
+			<content>
+				<FlexBox class="sapUiSmallMarginBegin">
+					<!--<Button type="Back" text="Back"></Button>-->
+				</FlexBox>
+				<f:SimpleForm id="studentDetailsFormId"
+						title="Please fill the below form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true"
+						>
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Input id="sNameInputId" placeholder="Enter your name" required="true" />
+							
+							<Label text="D-O-B" design="Bold"/>
+							<DatePicker id="sDateOfBirthId" placeholder="Enter Date" required="true"/>
+							
+							<Label text="Grade" design="Bold"/>
+							<Input id="sGradeId" placeholder="Enter Grade" required="true"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Input id="sRollNoId" placeholder="Enter Roll No"  required="true"/>
+							
+							<Label text="Gender" design="Bold"/>
+							<Input id="sGenderId" placeholder="Eg: He/She/Others"  required="true"/>
+							
+							<Label text="Contact" design="Bold"/>
+							<Input id="sContactId" placeholder="Enter Contact"  required="true"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Input id="sEmailId" placeholder="Enter Email"/>
+							
+							<Label text="City" design="Bold"/>
+							<Input id="sCityId" placeholder="Enter City"  required="true"/>
+						</f:content>
+				</f:SimpleForm>
+				<FlexBox justifyContent="Center" alignItems="Center">
+					<Button text="Submit" id="submitButtonId" type="Emphasized" press="onPressSubmitButtonDisplayTable"></Button>
+				</FlexBox>
+				<!--<Label></Label>-->
+				<Table id="table2Id" class="sapUiResponsiveMargin" visible="false" items="{StudentModel>/FormData}">
+						<headerToolbar>
+							<OverflowToolbar>
+								<content>
+									<Title text="Student Details"></Title>
+								</content>
+								<ToolbarSpacer />
+							</OverflowToolbar>
+						</headerToolbar>
+						<infoToolbar>
+							<OverflowToolbar>
+								<Label text="Find student details below"></Label>
+							</OverflowToolbar>
+						</infoToolbar>
+						<columns>
+							<Column>
+								<Label text="Name"/>
+							</Column>
+							<Column>
+								<Label text="D-O-B"/>
+							</Column>
+							<Column>
+								<Label text="Grade"/>
+							</Column>
+							<Column>
+								<Label text="Roll No"/>
+							</Column>
+							<Column>
+								<Label text="Gender"/>
+							</Column>
+							<Column>
+								<Label text="Contact"/>
+							</Column>
+							<Column>
+								<Label text="Email"/>
+							</Column>
+							<Column>
+								<Label text="City"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{StudentModel>Name}"></Text>
+									<Text text="{StudentModel>D-O-B}"></Text>
+									<Text text="{StudentModel>Grade}"></Text>
+									<Text text="{StudentModel>Roll No}"></Text>
+									<Text text="{StudentModel>Gender}"></Text>
+									<Text text="{StudentModel>Contact}"></Text>
+									<Text text="{StudentModel>Email}"></Text>
+									<Text text="{StudentModel>City}"></Text>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+			</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

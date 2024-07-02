@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.dproutingviews_withoutdata.controller.routingviews" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="View1">
+				<content>
+					<HBox alignContent="Center" justifyContent="Center">
+						<Button id="button1Id" text="Button1" press="onPressButton1"></Button>
+					</HBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

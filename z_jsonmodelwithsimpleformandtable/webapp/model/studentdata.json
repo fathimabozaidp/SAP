@@ -1,0 +1,64 @@
+{
+	"StudentDetails":[{
+		"Name" : "Fathima",
+		"D-O-B" : "10-02-1994",
+		"Grade" : 10,
+		"Roll No" : "103ABC",
+		"Gender" : "Female",
+		"Contact" : 9658745895,
+		"Email" : "mubashbozai@gmail.com",
+		"City": "Hyderabad"
+	},
+	{
+		"Name" : "Rahath",
+		"D-O-B" : "15-08-1993",
+		"Grade" : 12,
+		"Roll No" : "505FFR",
+		"Gender" : "Male",
+		"Contact" : 9658745895,
+		"Email" : "rahathkhan@gmail.com",
+		"City": "Kolkata"
+	},
+	{
+		"Name" : "Feeha",
+		"D-O-B" : "10-02-2023",
+		"Grade" : 1,
+		"Roll No" : "869IKL",
+		"Gender" : "Female",
+		"Contact" : 9658745895,
+		"Email" : "feeharifaat@gmail.com",
+		"City": "Bangalore"
+	},
+	{
+		"Name" : "Bozai",
+		"D-O-B" : "17-09-1995",
+		"Grade" : 7,
+		"Roll No" : "155JRT",
+		"Gender" : "Male",
+		"Contact" : 9658745895,
+		"Email" : "bozaikhan@gmail.com",
+		"City": "Mumbai"
+	},
+	{
+		"Name" : "Mubasheera",
+		"D-O-B" : "23-04-1998",
+		"Grade" : 5,
+		"Roll No" : "754JYH",
+		"Gender" : "Female",
+		"Contact" : 9658745895,
+		"Email" : "mubashbozai505@gmail.com",
+		"City": "Delhi"
+	},
+	{
+		"Name" : "Khatoon",
+		"D-O-B" : "09-02-2004",
+		"Grade" : 3,
+		"Roll No" : "786UYG",
+		"Gender" : "Female",
+		"Contact" : 9658745895,
+		"Email" : "khatoonfathima@gmail.com",
+		"City": "Hyderabad"
+	}
+	],
+	"FormData":[]
+}

@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form" 
+>
+	<!--<VBox alignContent="Center" justifyContent="Center">-->
+		<Popover id="customListPopoverId" title="ID : #{iconTabBarModel>/PopOverData/Id}" contentWidth="700px" contentHeight="500px" offsetX="-950" offsetY="30" >
+		<f:SimpleForm
+			id="customerRegistrationFormId"
+			layout="ResponsiveGridLayout"
+			labelSpanS = "12"
+			labelSpanL = "4"
+			labelSpanXL = "-1"
+			labelSpanM = "5"
+			emptySpanS = "0"
+			emptySpanM = "1"
+			emptySpanL = "4"
+			emptySpanXL = "-1"
+			columnsM = "2"
+			columnsL ="2"
+			columnsXL = "2"
+			editable="true"
+			title="Detailed Customer Data"
+			singleContainerFullSize="false">
+		<f:content>
+			<core:Title />
+			<Label text="Name"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/Name}"></Text>
+			<Label text="Dept. Date"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/DepartureDate}"></Text>
+			<Label text="Arrival Date"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/ArrivalDate}"></Text>
+			<Label text="Passport No"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/PassportNumber}"></Text>
+			<core:Title />
+			<Label text="From"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/From}"></Text>
+			<Label text="To"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/To}"></Text>
+			
+			<Label text="Seat No"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/SeatNumber}"></Text>
+			<Label text="Airlines"></Label>
+			<Text text="{iconTabBarModel>/PopOverData/Airlines}"></Text>
+		</f:content>
+		</f:SimpleForm>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<!--<endButton>-->
+					<Button id="popoverCloseButtonId" text="Close" icon="sap-icon://cancel" type="Reject" press="_OnPressClosePopOver"></Button>
+				<!--</endButton>-->
+			</OverflowToolbar>
+		</footer>
+	</Popover>	
+	<!--</VBox>-->
+</core:FragmentDefinition>

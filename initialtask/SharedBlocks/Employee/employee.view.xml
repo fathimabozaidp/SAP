@@ -1,0 +1,3 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.dpzEmployeeHrNavigation.SharedBlocks.Employee.employee">
+	<Title text="Design here"/>
+</mvc:View>

@@ -1,0 +1,12 @@
+<mvc:View controllerName="com.dpz_basic_initial_template.controller.basicview" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Basic Application">
+				<content>
+					<Label text="Name" visible="true"></Label>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

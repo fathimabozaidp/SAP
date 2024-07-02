@@ -1,0 +1,84 @@
+<mvc:View controllerName="com.dpinitialtask.controller.initialtaskview" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Product Details" navButtonPress="_OnPressBackButtonGoToSchoolForm" showNavButton="true">
+				<content>
+				
+					<HBox alignItems="Center" justifyContent="Center">
+						<Label text="Product Id" required="true"></Label>
+						<Input id="productId" width="400px" ></Input>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Label text="Product Name"  required="true"></Label>
+						<Input id="productNameId" width="400px"></Input>	
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Label text="Product Type"  required="true"></Label>
+						<Input id="productTypeId" width="400px"></Input>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Label text="Product Quantity"></Label>
+						<Input id="productQuantityId" width="400px"></Input>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Label text="Product Price"></Label>
+						<Input id="productPriceId" width="400px"></Input>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Button id="saveButtonId" text="Save" press="onSaveDisplayDetails"></Button>
+						<Button id="editButtonId" text="Edit" press="onEditPopUpDetailsInFields"></Button>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Text id="productIdTextId" text=""></Text>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Text id="productNameTextId" text=""></Text>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Text id="productTypeTextId" text=""></Text>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Text id="productQuantityTextId" text=""></Text>
+					</HBox>
+					<HBox  alignItems="Center" justifyContent="Center">
+						<Text id="productPriceTextId" text=""></Text>
+					</HBox>
+					
+					<!--<Button text="Destroy View" press="onPress"></Button>-->
+					<!--<f:SimpleForm-->
+					<!--	id="studentDetailsLabelTextFormId"-->
+					<!--	title="School Student Details Information" -->
+						
+					<!-->-->
+					<!--	<f:content>-->
+					<!--		<Label text="Name" design="Bold" textAlign="Center" textDirection="LTR" textAlign="Left"/>-->
+					<!--		<Text text="Fathima"/>-->
+							
+					<!--		<Label text="Roll No" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text="345678gh"/>-->
+							
+					<!--		<Label text="D-O-B" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text="htbgfvd}"/>-->
+							
+					<!--		<Label text="Class" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text="fd"/>-->
+							
+					<!--		<Label text="Father's Name" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text="ytbrvcd"/>-->
+							
+					<!--		<Label text="Mother's Name" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text=""/>-->
+							
+					<!--		<Label text="Father's Mobile" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text="7418529636"/>-->
+							
+					<!--		<Label text="Email" design="Bold" textAlign="Left"/>-->
+					<!--		<Text text="brvfecd@fgh.com"/>-->
+					<!--	</f:content>-->
+					<!--</f:SimpleForm>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

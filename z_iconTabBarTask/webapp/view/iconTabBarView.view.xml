@@ -1,0 +1,259 @@
+<mvc:View controllerName="com.dpz_iconTabBarTask.controller.iconTabBarView" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Booking Application">
+				<content>
+					<IconTabBar id="iconTabBarId" class="sapUiResponsiveContentPadding" backgroundDesign="Transparent">
+						<items>
+							<IconTabFilter id="customerFormIconTabFilterId" icon="sap-icon://customer"  iconDensityAware="true" text="Customer Form" key="tab1" iconColor="Neutral">
+								<f:SimpleForm 
+									id="customerRegistrationFormId"
+									layout="ResponsiveGridLayout"
+									labelSpanS = "12"
+									labelSpanL = "4"
+									labelSpanXL = "-1"
+									labelSpanM = "5"
+									emptySpanS = "0"
+									emptySpanM = "1"
+									emptySpanL = "4"
+									emptySpanXL = "-1"
+									editable="true"
+									title="Customer Registration Details"
+								>
+									<f:content>
+										<Label text="Id"></Label>
+										<Input id="customerId" placeholder="Enter Id" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerId" change="_OnChangeValidateCustomerId"></Input>
+										
+										<Label text="Name"></Label>
+										<Input id="customerNameId" placeholder="Enter Name" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerName" change="_OnChangeValidateCustomerName"></Input>
+										
+										<Label text="Email"></Label>
+										<Input id="customerEmailId" placeholder="Enter Email" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerEmail" change="_OnChangeValidateCustomerEmail"></Input>
+										
+										<Label text="PAN No"></Label>
+										<Input id="customerPanId" placeholder="Enter PAN Number" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerPan" change="_OnChangeValidateCustomerPan"></Input>
+										
+										<Label text="Passport No"></Label>
+										<Input id="customerPassportId" placeholder="Enter Passport Number" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerPassport" change="_OnChangeValidateCustomerPassport"></Input>
+										
+										<Label text="Mobile"></Label>
+										<Input id="customerMobileId" placeholder="Enter Mobile Number" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerMobile" change="_OnChangeValidateCustomerMobile"></Input>
+										
+										<Label text="City"></Label>
+										<Input id="customerCityId" placeholder="Enter City" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerCity" change="_OnChangeValidateCustomerCity"></Input>
+										
+										<Label text="State"></Label>
+										<Input id="customerStateId" placeholder="Enter State" showValueHelp="true" valueHelpRequest="_OnValueHelpRequestCustomerState" change="_OnChangeValidateCustomerState"></Input>
+										
+										<Label></Label>
+										<HBox justifyContent="Center" alignItems="Center">
+											<Button id="submitCustomerDetailsButtonId" text="Submit" type="Emphasized" press="_OnPressSubmitCustomerDetailsInObjectHeader"></Button>
+										</HBox>
+									</f:content>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabFilter id="flightFormIconTabFilterId" icon="sap-icon://flight" text="Flight Form" key="tab2" iconColor="Neutral">
+								<f:SimpleForm 
+									id="passengerFlightRegistrationFormId"
+									layout="ResponsiveGridLayout"
+									labelSpanS = "12"
+									labelSpanL = "4"
+									labelSpanXL = "-1"
+									labelSpanM = "5"
+									emptySpanS = "0"
+									emptySpanM = "1"
+									emptySpanL = "4"
+									emptySpanXL = "-1"
+									editable="true"
+									title="Passenger Registration Details"
+								>
+									<f:content>
+										<Label text="Id"></Label>
+										<Input id="passengerId" editable="false"></Input>
+										
+										<Label text="Name"></Label>
+										<Input id="passengerNameId" placeholder="Enter Name" liveChange="_OnInputValidateName"></Input>
+										
+										<Label text="From"></Label>
+										<Input id="passengerFlyingFromId" placeholder="Enter From Place" liveChange="_OnInputValidateFrom"></Input> 
+										
+										<Label text="To"></Label>
+										<Input id="passengerFlyingToId" placeholder="Enter To Place" liveChange="_OnInputValidateTo"></Input>
+										
+										<Label text="Departure Date"></Label>
+										<DatePicker id="passengerDepartureDateId" valueFormat="dd.MM.YYYY" displayFormat="dd.MM.YYYY" change="_OnInputValidateDepartureDate"></DatePicker>
+										
+										<Label text="Arrival Date"></Label>
+										<DatePicker id="passengerArrivalDateId" valueFormat="dd.MM.YYYY" displayFormat="dd.MM.YYYY" change="_OnInputValidateArrivalDate"></DatePicker>
+											
+										<Label text="Passport No. "></Label>
+										<Input id="passengerPassportNumberId" placeholder="Enter Passport Number" change="_OnInputValidatePassportNumber"></Input>
+										
+										<Label text="Seat No. "></Label>
+										<Input id="passengerSeatNumberId" placeholder="Enter Seat Number" change="_OnInputValidateSeatNumber"></Input>
+										
+										<Label text="Airline Name"></Label>
+										<Input id="passengerAirlineId" placeholder="Enter Airline" liveChange="_OnInputValidateAirline"></Input>
+										
+										<Label></Label>
+										<HBox justifyContent="Center" alignItems="Center">
+											<Button id="submitPassengerDetailsButtonId" text="Submit" type="Emphasized" press="_OnPressSubmitDisplayDetailsAsCustomList"></Button>
+										</HBox>
+									</f:content>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabFilter id="flightTravelListIconTabFilterId" icon="sap-icon://list" text="Flight Details" key="tab3" iconColor="Critical">
+								<List id="customListItemId" headerText="Passenger Details" visible="false" selectionChange="displayDetailedListInPopOver" mode="SingleSelectMaster" items="{iconTabBarModel>/PassengerData}">
+									<CustomListItem>
+										<HBox>
+											<VBox class="sapUiMediumMarginBegin sapUiMediumMarginTopBottom" >
+												<FlexBox  class="sapUiTinyMarginTopBottom" >
+													<Label text="Id :"></Label>
+													<Text text="{iconTabBarModel>Id}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+												<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="Name :"></Label>
+													<Text text="{iconTabBarModel>Name}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+												<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="From :"></Label>
+													<Text text="{iconTabBarModel>From}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+												<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="To :"></Label>
+													<Text text="{iconTabBarModel>To}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+											</VBox>
+										</HBox>
+									</CustomListItem>
+								</List>	
+							</IconTabFilter>
+							<IconTabFilter id="customerObjectHeaderIconTabFilterId" icon="sap-icon://header" key="tab4" text="Customer Data" iconColor="Default" >
+								<ObjectHeader id="CustomerDetailsObjectHeaderId" binding="{iconTabBarModel>/CustomerData/0}" >
+									<attributes>
+										<ObjectAttribute title="Id" text="{iconTabBarModel>Id}" />
+										<ObjectAttribute title="Name" text="{iconTabBarModel>Name}" />
+										<ObjectAttribute title="Email" text="{iconTabBarModel>Email}" />
+										<ObjectAttribute title="Pan Number" text="{iconTabBarModel>PanNo}" />
+										<ObjectAttribute title="Passport Number" text="{iconTabBarModel>PassportNo}" />
+										<ObjectAttribute title="Mobile" text="{iconTabBarModel>Mobile}" />
+										<ObjectAttribute title="City" text="{iconTabBarModel>City}" />
+										<ObjectAttribute title="State" text="{iconTabBarModel>State}" />
+									</attributes>
+								</ObjectHeader>	
+							</IconTabFilter>
+							<IconTabFilter id="allCustomersHistoryTableIconTabFilterId" icon="sap-icon://customer-history" text="All Customers" key="tab5" iconColor="Negative">
+								<FlexBox alignItems="Center" justifyContent="End">
+										<Button id="deleteButtonId" type="Emphasized" icon="sap-icon://delete" press="_OnPressdeleteTableData" visible="false"/>	
+								</FlexBox>
+								<Table id="allCustomerDetailsTableId" items="{iconTabBarModel>/CustomerData}" mode="MultiSelect" visible="false">
+									<headerToolbar>
+										<OverflowToolbar>
+											<content>
+												<Title text="Employee Details"></Title>
+											</content>
+										</OverflowToolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Id"></Text>	
+										</Column>
+										<Column>
+											<Text text="Name"></Text>	
+										</Column>
+										<Column>
+											<Text text="Email"></Text>
+										</Column>
+										<Column>
+											<Text text="PAN Number"></Text>
+										</Column>
+										<Column>
+											<Text text="Passport Number"></Text>
+										</Column>
+										<Column>
+											<Text text="Mobile"></Text>
+										</Column>
+										<Column>
+											<Text text="City"></Text>
+										</Column>
+										<Column>
+											<Text text="State"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{iconTabBarModel>Id}"></Text>
+												<Text text="{iconTabBarModel>Name}"></Text>
+												<Text text="{iconTabBarModel>Email}"></Text>
+												<Text text="{iconTabBarModel>PanNo}"></Text>
+												<Text text="{iconTabBarModel>PassportNo}"></Text>
+												<Text text="{iconTabBarModel>Mobile}"></Text>
+												<Text text="{iconTabBarModel>City}"></Text>
+												<Text text="{iconTabBarModel>State}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+								<Table id="allPassengerDetailsTableId" items="{iconTabBarModel>/PassengerData}" mode="MultiSelect" visible="false">
+									<headerToolbar>
+										<OverflowToolbar>
+											<content>
+												<Title text="Passenger Details"></Title>
+											</content>
+										</OverflowToolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Id"></Text>	
+										</Column>
+										<Column>
+											<Text text="Name"></Text>	
+										</Column>
+										<Column>
+											<Text text="From"></Text>
+										</Column>
+										<Column>
+											<Text text="To"></Text>
+										</Column>
+										<Column>
+											<Text text="Departure Date"></Text>
+										</Column>
+										<Column>
+											<Text text="Arrival Date"></Text>
+										</Column>
+										<Column>
+											<Text text="Passport Number"></Text>
+										</Column>
+										<Column>
+											<Text text="Seat Number"></Text>
+										</Column>
+										<Column>
+											<Text text="Airlines"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{iconTabBarModel>Id}"></Text>
+												<Text text="{iconTabBarModel>Name}"></Text>
+												<Text text="{iconTabBarModel>From}"></Text>
+												<Text text="{iconTabBarModel>To}"></Text>
+												<Text text="{iconTabBarModel>DepartureDate}"></Text>
+												<Text text="{iconTabBarModel>ArrivalDate}"></Text>
+												<Text text="{iconTabBarModel>PassportNumber}"></Text>
+												<Text text="{iconTabBarModel>SeatNumber}"></Text>
+												<Text text="{iconTabBarModel>Airlines}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

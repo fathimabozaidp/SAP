@@ -1,0 +1,67 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog id="employeeExperienceFragmentDialogId" title="{i18n>employeeExperienceFragmentDialogTitle}" contentWidth="1000px">
+		<l:Grid id="form5InView4Id" visible="true">
+			<l:content>
+				<Label text="{i18n>employeeIdText}" required="true" class="sapUiLargeMarginTop">
+					<layoutData>
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="employeeEditInForm5Id" placeholder="{i18n>customerIdPlaceholder}" editable="false" class="sapUiMediumMarginTop"
+					value="{dataModel>/SelectedRow/EmployeeId}">
+					<layoutData>
+						<l:GridData span="L3 M8 S12"></l:GridData>
+					</layoutData>
+				</Input>
+				<Label text="{i18n>employeeEditNameText}" required="true" class="sapUiSmallMarginTop">
+					<layoutData>
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="employeeEditNameInForm5Id" placeholder="{i18n>customerNamePlaceholder}" editable="false"
+					value="{dataModel>/SelectedRow/EmployeeName}"></Input>
+				<Label text="{i18n>employeeDepartmentText}" class="sapUiSmallMarginTop" required="true">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<ComboBox id="employeeEditDepartmentInForm5Id" items="{path : 'dataModel>/DepartmentDetails'}"
+					selectedKey="{dataModel>/SelectedRow/EmployeeDepartment}" width="20rem">
+					<core:Item key="{dataModel>key}" text="{dataModel>value}"/>
+				</ComboBox>
+				<Label text="{i18n>employeeCompanyText}" class="sapUiSmallMarginTop" required="true">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<ComboBox id="employeeEditCompanyId" items="{path : 'dataModel>/CompanyDetails'}" selectedKey="{dataModel>/SelectedRow/EmployeeCompany}"
+					width="20rem">
+					<core:Item key="{dataModel>CompanyId}" text="{dataModel>CompanyName}"/>
+				</ComboBox>
+				<Label text="{i18n>employeeExperienceText}" class="sapUiSmallMarginTop" required="true">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<ComboBox id="employeeEditExperienceInForm5Id" items="{path : 'dataModel>/ExperienceDetails'}"
+					selectedKey="{dataModel>/SelectedRow/EmployeeExperience}" width="20rem">
+					<core:Item key="{dataModel>key}" text="{dataModel>text}"/>
+				</ComboBox>
+				<Label text="{i18n>employeeSkillsText}" class="sapUiSmallMarginTop" required="true">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<MultiComboBox id="employeeEditSkillsId" items="{path : 'dataModel>/SkillsDetails'}" selectionChange="OnLeaveFocusAllFieldsOfExperienceForm">
+					<core:Item key="{dataModel>key}" text="{dataModel>value}"/>
+				</MultiComboBox>
+			</l:content>
+		</l:Grid>
+		<HBox alignItems="Center" justifyContent="Center">
+			<Button id="saveEditEmployeeExperienceDetailsButtonId" text="{i18n>saveButtonText}" type="Emphasized" press="_OnPressSaveEdittedEmployeeExperienceDetails"></Button>
+		</HBox>
+		<endButton>
+			<Button id="editEmployeeExperienceFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseEditEmployeeExperienceFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

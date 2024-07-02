@@ -1,0 +1,56 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog id="customerEmailDialogId" title="Customer Details" contentWidth="1200px">
+		<Table id="customerEmailFragmentTableId" items="{iconTabBarModel>/FragmentTableData}" mode="SingleSelectLeft" selectionChange="selectTableRowInEmailFragment">
+			<headerToolbar>
+				<Toolbar>
+					<ToolbarSpacer />
+					<SearchField id="searchFieldEmailFragmentId" width="300px" search="onSearchInFragment" ></SearchField>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column>
+					<Text text="Id"></Text>
+				</Column>
+				<Column>
+					<Text text="Name"></Text>
+				</Column>
+				<Column>
+					<Text text="Email"></Text>
+				</Column>
+				<Column>
+					<Text text="PAN Number"></Text>
+				</Column>
+				<Column>
+					<Text text="Passport Number"></Text>
+				</Column>
+				<Column>
+					<Text text="Mobile"></Text>
+				</Column>
+				<Column>
+					<Text text="State"></Text>
+				</Column>
+				<Column>
+					<Text text="City"></Text>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+						<Text text="{iconTabBarModel>Id}"></Text>
+						<Text text="{iconTabBarModel>Name}"></Text>
+						<Text text="{iconTabBarModel>Email}"></Text>
+						<Text text="{iconTabBarModel>PanNo}"></Text>
+						<Text text="{iconTabBarModel>PassportNo}"></Text>
+						<Text text="{iconTabBarModel>Mobile}"></Text>
+						<Text text="{iconTabBarModel>City}"></Text>
+						<Text text="{iconTabBarModel>State}"></Text>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<endButton>
+				<Button id="closeCustomerEmailFragmentId" icon="sap-icon://cancel" text="Close" type="Reject" press="onPressCloseFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

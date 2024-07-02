@@ -1,0 +1,693 @@
+{
+	"EmptyForm":[
+		{
+			"EmptyValue":"",
+			"EmptyKey" : "",
+			"EmptyKeys" : "",
+			"EmptyRadioButtonValue" : "false"
+		}],
+	"AgeDetails": [{
+		"AgeId": "10 Years",
+		"AgeValue": "10 Years"
+	}, {
+		"AgeId": "11 Years",
+		"AgeValue": "11 Years"
+	}, {
+		"AgeId": "12 Years",
+		"AgeValue": "12 Years"
+	}, {
+		"AgeId": "13 Years",
+		"AgeValue": "13 Years"
+	}, {
+		"AgeId": "14 Years",
+		"AgeValue": "14 Years"
+	}, {
+		"AgeId": "15 Years",
+		"AgeValue": "15 Years"
+	}, {
+		"AgeId": "16 Years",
+		"AgeValue": "16 Years"
+	}, {
+		"AgeId": "17 Years",
+		"AgeValue": "17 Years"
+	}, {
+		"AgeId": "18 Years",
+		"AgeValue": "18 Years"
+	}],
+	"StreamDetails": [{
+		"StreamId": "CSE",
+		"StreamName": "CSE"
+	}, {
+		"StreamId": "ECE",
+		"StreamName": "ECE"
+	}, {
+		"StreamId": "IT",
+		"StreamName": "IT"
+	}, {
+		"StreamId": "EEE",
+		"StreamName": "EEE"
+	}],
+	"CompanyDetails": [{
+		"CompanyId": "Digital Personas",
+		"CompanyName": "Digital Personas"
+	}, {
+		"CompanyId": "Tech Mahindra",
+		"CompanyName": "Tech Mahindra"
+	}, {
+		"CompanyId": "IBM",
+		"CompanyName": "IBM"
+	}, {
+		"CompanyId": "Wipro",
+		"CompanyName": "Wipro"
+	}, {
+		"CompanyId": "Deloitte",
+		"CompanyName": "Deloitte"
+	}, {
+		"CompanyId": "TCS",
+		"CompanyName": "TCS"
+	}, {
+		"CompanyId": "EY",
+		"CompanyName": "EY"
+	}],
+	"LocationDetails": [{
+		"LocationId": "Hyderabad",
+		"LocationName": "Hyderabad"
+	}, {
+		"LocationId": "Bangalore",
+		"LocationName": "Bangalore"
+	}, {
+		"LocationId": "Delhi",
+		"LocationName": "Delhi"
+	}, {
+		"LocationId": "Mumbai",
+		"LocationName": "Mumbai"
+	}, {
+		"LocationId": "Indore",
+		"LocationName": "Indore"
+	}, {
+		"LocationId": "Pune",
+		"LocationName": "Pune"
+	}],
+	"AddOnDetails": [{
+		"AddOnId": "Debit Card",
+		"AddOnName": "Debit Card"
+	}, {
+		"AddOnId": "Credit Card",
+		"AddOnName": "Credit Card"
+	}, {
+		"AddOnId": "Cheque Book",
+		"AddOnName": "Cheque Book"
+	}],
+	"EmployeeLanguages": [{
+		"key": "English",
+		"text": "English"
+	}, {
+		"key": "Telugu",
+		"text": "Telugu"
+	}, {
+		"key": "Hindi",
+		"text": "Hindi"
+	}, {
+		"key": "French",
+		"text": "French"
+	}, {
+		"key": "German",
+		"text": "German"
+	}],
+	"SkillsDetails": [{
+		"key": "JavaScript",
+		"value": "JavaScript"
+	}, {
+		"key": "HTML",
+		"value": "HTML"
+	}, {
+		"key": "CSS",
+		"value": "CSS"
+	}, {
+		"key": "SAPUI5",
+		"value": "SAPUI5"
+	}, {
+		"key": "SAP Fiori",
+		"value": "SAP Fiori"
+	}, {
+		"key": "SAP ABAP",
+		"value": "SAP ABAP"
+	}, {
+		"key": "CDS Views",
+		"value": "CDS Views"
+	}, {
+		"key": "S/4 Hana",
+		"value": "S/4 Hana"
+	}],
+	"AddressType": [{
+		"key": "Permanent",
+		"text": "Permanent"
+	}, {
+		"key": "Present",
+		"text": "Present"
+	}],
+	"ExperienceDetails": [{
+		"key": "1 Year",
+		"text": "1 Year"
+	}, {
+		"key": "2 Years",
+		"text": "2 Years"
+	}, {
+		"key": "3 Years",
+		"text": "3 Years"
+	}, {
+		"key": "4 Years",
+		"text": "4 Years"
+	}, {
+		"key": "5 Years",
+		"text": "5 Years"
+	}, {
+		"key": "6 Years",
+		"text": "6 Years"
+	}, {
+		"key": "7 Years",
+		"text": "7 Years"
+	}, {
+		"key": "8 Years",
+		"text": "8 Years"
+	}, {
+		"key": "9 Years",
+		"text": "9 Years"
+	}, {
+		"key": "10 Years",
+		"text": "10 Years"
+	}, {
+		"key": ">10 Years",
+		"text": ">10 Years"
+	}],
+	"StudentDetailsEntity": [],
+	"EmployeeDetailsEntity": [],
+	"InterStudentDetailsEntity": [],
+	"GraduateStudentDetailsEntity": [],
+	"InvoiceDetailsEntity": [],
+	"EmployeeIconTabFilterEntity" : [],
+	"AddressIconTabFilterEntity" : [],
+	"HealthIconTabFilterEntity" :[],
+	"NomineeIconTabFilterEntity" : [],
+	"ExperienceIconTabFilterEntity":[],
+	"KnowledgeIconTabFilterEntity":[],
+	"DepartmentDetails": [{
+		"key": "IT",
+		"value": "IT"
+	}, {
+		"key": "Finance",
+		"value": "Finance"
+	}, {
+		"key": "Sales",
+		"value": "Sales"
+	}],
+	"StateCode": [{
+		"key": "32",
+		"text": "32"
+	}, {
+		"key": "35",
+		"text": "35"
+	}, {
+		"key": "37",
+		"text": "37"
+	}, {
+		"key": "42",
+		"text": "42"
+	}, {
+		"key": "45",
+		"text": "45"
+	}, {
+		"key": "47",
+		"text": "47"
+	}, {
+		"key": "65",
+		"text": "65"
+	}, {
+		"key": "77",
+		"text": "77"
+	}],
+	"catalog": {
+		"categories": [{
+			"name": "Women",
+			"categories": [{
+				"name": "Clothing",
+				"categories": [{
+					"name": "Dresses",
+					"categories": [{
+						"name": "Short Black Dress",
+						"amount": 1200,
+						"currency": "INR"
+					}, {
+						"name": "Casual Red Dress",
+						"amount": 1800,
+						"currency": "INR"
+					}, {
+						"name": "Long Blue Denim",
+						"amount": 1200,
+						"currency": "INR"
+					}]
+				}, {
+					"name": "Tops",
+					"categories": [{
+						"name": "Printed Shirt",
+						"amount": 1000,
+						"currency": "INR"
+					}, {
+						"name": "Tank Top",
+						"amount": 800,
+						"currency": "INR"
+					}, {
+						"name": "Off-Shoulder Neon Top",
+						"amount": 500,
+						"currency": "INR"
+					}]
+				}, {
+					"name": "Pants",
+					"categories": [{
+						"name": "Fitted Jeans",
+						"amount": 1000,
+						"currency": "INR"
+					}, {
+						"name": "Skinny Jeans",
+						"amount": 900,
+						"currency": "INR"
+					}, {
+						"name": "Plazzo Jeans",
+						"amount": 1800,
+						"currency": "INR"
+					}, {
+						"name": "Black Jeans",
+						"amount": 1500,
+						"currency": "INR"
+					}]
+				}]
+			}, {
+				"name": "Jewellery",
+				"categories": [{
+					"name": "Bracelet",
+					"amount": 500,
+					"currency": "INR"
+				}, {
+					"name": "Earrings",
+					"amount": 400,
+					"currency": "INR"
+				}]
+			}, {
+				"name": "Handbags",
+				"categories": [{
+					"name": "Sling Bag",
+					"amount": 1500,
+					"currency": "INR"
+				}, {
+					"name": "Shoulder Bag",
+					"amount": 2200,
+					"currency": "INR"
+				}]
+			}]
+		}, {
+			"name": "Men",
+			"categories": [{
+				"name": "Clothing",
+				"categories": [{
+					"name": "Shirts",
+					"categories": [{
+						"name": "Black T-Shirt",
+						"amount": 800,
+						"currency": "INR"
+					}, {
+						"name": "Polo T-Shirt",
+						"amount": 500,
+						"currency": "INR"
+					}, {
+						"name": "White T-Shirt",
+						"amount": 700,
+						"currency": "INR"
+					}]
+				}, {
+					"name": "Pants",
+					"categories": [{
+						"name": "Black Pants",
+						"amount": 1100,
+						"currency": "INR"
+					}, {
+						"name": "Blue Pants",
+						"amount": 1000,
+						"currency": "INR"
+					}]
+				}, {
+					"name": "Shorts",
+					"categories": [{
+						"name": "Trouser Shorts",
+						"amount": 700,
+						"currency": "INR"
+					}, {
+						"name": "Slim Shorts",
+						"amount": 800,
+						"currency": "INR"
+					}]
+				}]
+			}, {
+				"name": "Accessories",
+				"categories": [{
+					"name": "Tie",
+					"amount": 550,
+					"currency": "INR"
+				}, {
+					"name": "Wallet",
+					"amount": 2450,
+					"currency": "INR"
+				}, {
+					"name": "Sunglasses",
+					"amount": 1550,
+					"currency": "INR"
+				}]
+			}, {
+				"name": "Shoes",
+				"categories": [{
+					"name": "Sports Shoes",
+					"amount": 11000,
+					"currency": "INR"
+				}, {
+					"name": "Fashion Sneakers",
+					"amount": 6000,
+					"currency": "INR"
+				}, {
+					"name": "Boots",
+					"amount": 4000,
+					"currency": "INR"
+				}]
+			}]
+		}, {
+			"name": "Girls",
+			"categories": [{
+				"name": "Clothing",
+				"categories": [{
+					"name": "Frocks",
+					"categories": [{
+						"name": "Frill Frock",
+						"amount": 1800,
+						"currency": "INR"
+					}, {
+						"name": "Off-Shoulder Frock",
+						"amount": 2500,
+						"currency": "INR"
+					}, {
+						"name": "Closed-Neck Frock",
+						"amount": 3000,
+						"currency": "INR"
+					}]
+				}, {
+					"name": "Tops",
+					"categories": [{
+						"name": "Round neck T-Shirts",
+						"amount": 500,
+						"currency": "INR"
+					}, {
+						"name": "White Shirt",
+						"amount": 800,
+						"currency": "INR"
+					}]
+				}, {
+					"name": "Pants",
+					"categories": [{
+						"name": "Pajamas",
+						"amount": 400,
+						"currency": "INR"
+					}, {
+						"name": "Jeans",
+						"amount": 700,
+						"currency": "INR"
+					}, {
+						"name": "Leggings",
+						"amount": 500,
+						"currency": "INR"
+					}]
+				}]
+			}, {
+				"name": "Accessories",
+				"categories": [{
+					"name": "Necklace",
+					"amount": 2000,
+					"currency": "INR"
+				}, {
+					"name": "Bracelets",
+					"amount": 500,
+					"currency": "INR"
+				}, {
+					"name": "Headbands",
+					"amount": 400,
+					"currency": "INR"
+				}]
+			}, {
+				"name": "Shoes",
+				"categories": [{
+					"name": "Sports Shoes",
+					"amount": 1000,
+					"currency": "INR"
+				}, {
+					"name": "Boots",
+					"amount": 1500,
+					"currency": "INR"
+				}, {
+					"name": "Sandals",
+					"amount": 500,
+					"currency": "INR"
+				}]
+			}]
+		}]
+	},
+	"family": {
+		"generations": [{
+			"name": "Claus",
+			"generation": "Generation1",
+			"gender": "Male",
+			"age": 80,
+			"generations": [{
+				"name": "Brent",
+				"generation": "Generation2",
+				"relation": "Son",
+				"gender": "Male",
+				"age": 52,
+				"generations": [{
+					"name": "Emelia",
+					"generation": "Generation3",
+					"relation": "Grand Daughter",
+					"gender": "Female",
+					"age": 32,
+					"generations": [{
+						"name": "Ken",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 10
+					}, {
+						"name": "Linda",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 15
+					}]
+				}, {
+					"name": "Cairo",
+					"generation": "Generation3",
+					"relation": "Grand Son",
+					"gender": "Male",
+					"age": 30,
+					"generations": [{
+						"name": "Sarah",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 25
+					}, {
+						"name": "Diana",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 27
+					}]
+				}]
+			}, {
+				"name": "Globe",
+				"generation": "Generation2",
+				"relation": "Son",
+				"gender": "Male",
+				"age": 51,
+				"generations": [{
+					"name": "Rose",
+					"generation": "Generation3",
+					"relation": "Grand Daughter",
+					"gender": "Female",
+					"age": 31,
+					"generations": [{
+						"name": "Stephen",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 11
+					}, {
+						"name": "Jess",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 9
+					}]
+				}, {
+					"name": "George",
+					"generation": "Generation3",
+					"relation": "Grand Son",
+					"gender": "Male",
+					"age": 29,
+					"generations": [{
+						"name": "Suzane",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 10
+					}, {
+						"name": "Gary",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 7
+					}]
+				}]
+			}, {
+				"name": "Christopher",
+				"generation": "Generation2",
+				"relation": "Son",
+				"gender": "Male",
+				"age": 50,
+				"generations": [{
+					"name": "Julie",
+					"generation": "Generation3",
+					"relation": "Grand Daughter",
+					"gender": "Female",
+					"age": 28,
+					"generations": [{
+						"name": "Courtney",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 8
+					}, {
+						"name": "Billie",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 7
+					}]
+				}, {
+					"name": "Matt",
+					"generation": "Generation3",
+					"relation": "Grand Son",
+					"gender": "Male",
+					"age": 26,
+					"generations": [{
+						"name": "Mimi",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 7
+					}, {
+						"name": "Aaron",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 6
+					}]
+				}]
+			}, {
+				"name": "Jose",
+				"generation": "Generation2",
+				"relation": "Son",
+				"gender": "Male",
+				"age": 48,
+				"generations": [{
+					"name": "Poh",
+					"generation": "Generation3",
+					"relation": "Grand Daughter",
+					"gender": "Female",
+					"age": 28,
+					"generations": [{
+						"name": "Renold",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 6
+					}, {
+						"name": "Rosy",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 5
+					}]
+				}, {
+					"name": "Callum",
+					"generation": "Generation3",
+					"relation": "Grand Son",
+					"gender": "Male",
+					"age": 25,
+					"generations": [{
+						"name": "Melissa",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 3
+					}, {
+						"name": "Jock",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 2
+					}]
+				}]
+			}, {
+				"name": "Sashi",
+				"generation": "Generation2",
+				"relation": "Son",
+				"gender": "Male",
+				"age": 46,
+				"generations": [{
+					"name": "Laura",
+					"generation": "Generation3",
+					"relation": "Grand Daughter",
+					"gender": "Female",
+					"age": 26,
+					"generations": [{
+						"name": "Mindy",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 6
+					}, {
+						"name": "Jenn",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 5
+					}]
+				}, {
+					"name": "Harry",
+					"generation": "Generation3",
+					"relation": "Grand Son",
+					"gender": "Male",
+					"age": 25,
+					"generations": [{
+						"name": "Stephy",
+						"generation": "Generation4",
+						"relation": "Great Grand Daughter",
+						"gender": "Female",
+						"age": 5
+					}, {
+						"name": "Max",
+						"generation": "Generation4",
+						"relation": "Great Grand Son",
+						"gender": "Male",
+						"age": 2
+					}]
+				}]
+			}]
+		}]
+	}
+}
