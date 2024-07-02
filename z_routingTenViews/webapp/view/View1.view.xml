@@ -1,0 +1,314 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<!--FORM 1-->
+					<OverflowToolbar id="view1Form1Id"  visible="true">
+						<content>
+							<Title  text="{i18n>form1Title}" class="sapUiLargeMarginBegin"></Title>
+						</content>
+					</OverflowToolbar>
+					<l:Grid visible="true">
+						<l:content>
+							<Label text="{i18n>nameText}" required="true" class="sapUiLargeMarginTop" textAlign="Begin">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12" linebreak="true"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="studentNameId" placeholder="{i18n>namePlaceholder}" class="sapUiMediumMarginTop" liveChange="_OnInputName">
+								<layoutData>
+									<l:GridData span="L3 M8 S12"></l:GridData>
+								</layoutData>
+							</Input>
+							<Label text="{i18n>ageText}" class="sapUiSmallMarginTop">
+								<layoutData>
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<ComboBox id="studentAgeId" items="{path : 'dataModel>/AgeDetails'}" change="_OnInputAge" width="20rem">
+								<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+							</ComboBox>
+							<Label text="{i18n>genderText}" class="sapUiSmallMarginTop">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<!--<RadioButtonGroup id="studentGenderGroupId" columns="3">-->
+							<!--	<RadioButton text="{i18n>genderMaleText}" selected="true"/>-->
+							<!--	<RadioButton text="{i18n>genderFemaleText}"/>-->
+							<!--	<RadioButton text="{i18n>genderOthersText}"/>-->
+							<!--</RadioButtonGroup>-->
+							<RadioButton id="studentGenderMaleId" text="{i18n>genderMaleText}" select="_OnSelectGender">
+								<layoutData >
+									<l:GridData span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</RadioButton>
+							<RadioButton id="studentGenderFemaleId" text="{i18n>genderFemaleText}" select="_OnSelectGender">
+								<layoutData >
+									<l:GridData span="L2 M6 S12"></l:GridData>
+								</layoutData>
+							</RadioButton>
+							<Label text="{i18n>fatherNameText}" class="sapUiSmallMarginTop" textAlign="Begin">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="studentFatherNameId" placeholder="{i18n>fatherNamePlaceholder}" liveChange="_OnInputFatherName"></Input>
+							<Label text="{i18n>fatherMobileText}" required="true" class="sapUiSmallMarginTop">
+								<layoutData>
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="studentFatherMobileId" placeholder="{i18n>fatherMobilePlaceholder}" change="_OnInputFatherMobile"></Input>
+							<Label text="{i18n>preferredStreamText}" required="true" class="sapUiSmallMarginTop">
+								<layoutData>
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<MultiComboBox id="studentPreferredStreamId" items="{path : 'dataModel>/StreamDetails'}" selectionChange="_OnSelectPreferredStream">
+								<core:Item key="{dataModel>StreamId}" text="{dataModel>StreamName}"/>
+							</MultiComboBox>
+						</l:content>
+					</l:Grid>
+					<HBox alignItems="Center" justifyContent="Center">
+						<Button id="submitButtonId" text="{i18n>submitButtonText}" type="Emphasized" press="_OnPressForm1SubmitButton"></Button>
+					</HBox>
+					<!--FORM 2-->
+					<OverflowToolbar id="view1Form2Id"  visible="false">
+						<content>
+							<Title  text="{i18n>form2Title}" class="sapUiLargeMarginBegin"></Title>
+						</content>
+					</OverflowToolbar>
+					<f:SimpleForm id="employeeDetailsFormId" visible="false" layout="ResponsiveGridLayout" labelSpanS="12" labelSpanL="4" labelSpanXL="-1"
+						labelSpanM="5" emptySpanS="0" emptySpanM="1" emptySpanL="4" emptySpanXL="-1" editable="true">
+						<f:content>
+							<Label text="{i18n>employeeNameText}"></Label>
+							<Input id="eNameId" placeholder="{i18n>employeeNamePlaceholder}" required="true" liveChange="_OnInputEmployeeName"></Input>
+							<Label text="{i18n>employeeIdText}"></Label>
+							<Input id="eId" placeholder="{i18n>employeeIdPlaceholder}" required="true" change="_OnInputEmployeeId"></Input>
+							<Label text="{i18n>employeeAgeText}" required="true"></Label>
+							<ComboBox id="eAgeId" items="{path: 'dataModel>/AgeDetails'}" selectionChange="_OnSelectEmployeeAge">
+								<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+							</ComboBox>
+							<Label text="{i18n>employeeMobileText}"></Label>
+							<Input id="eMobileId" placeholder="{i18n>employeeMobilePlaceholder}" required="true" change="_OnInputEmployeeMobileNumber"></Input>
+							<Label text="{i18n>employeeEmailText}"></Label>
+							<Input id="eEmailId" placeholder="{i18n>employeeEmailTextPlaceholder}" required="true" change="_OnInputEmail"></Input>
+							<Label text="{i18n>employeeCompanyText}" required="true"></Label>
+							<MultiComboBox id="eCompanyId" items="{path: 'dataModel>/CompanyDetails'}" selectionChange="_OnSelectCompanyName">
+								<core:Item key="{dataModel>CompanyId}" text="{dataModel>CompanyName}"/>
+							</MultiComboBox>
+							<Label text="{i18n>employeeLocationText}"></Label>
+							<MultiComboBox required="true" id="eLocationId" items="{path: 'dataModel>/LocationDetails'}" selectionChange="_OnSelectLocation">
+								<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+							</MultiComboBox>
+							<Label></Label>
+							<Switch state="false" class="sapUiLargeMarginBegin" id="from2SwitchButtonId" type="AcceptReject" change="_OnSwitchForm2">
+								<layoutData>
+									<FlexItemData growFactor="1"/>
+								</layoutData>
+							</Switch>
+						</f:content>
+					</f:SimpleForm>
+					<!--Form 3-->
+					<OverflowToolbar id="view1Form3Id" visible="false">
+						<content>
+							<Title text="{i18n>form3Title}" class="sapUiLargeMarginBegin" />
+						</content>
+					</OverflowToolbar>
+					<Panel id="form3InPanelId" width="auto" class="sapUiResponsiveMargin" accessibleRole="Region" visible="true">
+						<content>
+							<HBox alignItems="Center" justifyContent="Center">
+								<VBox>
+									<FlexBox>
+										<Label text="{i18n>iStudentNameText}" class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiLargeMarginBegin" required="true"/>
+										<Input id="iStudentNameId" placeholder="{i18n>iStudentNamePlaceholder}" required="true" liveChange="_OnInputInterStudentName" width="18rem"/>
+									</FlexBox>
+									<FlexBox>
+										<Label text="{i18n>iStudentIdText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd sapUiLargeMarginBegin" required="true"/>
+										<Input id="iStudentRollNoId" placeholder="{i18n>iStudentIdPlaceholder}" required="true" class="sapUiMediumMarginBegin"
+											change="_OnInputInterStudentId" width="18rem"/>
+									</FlexBox>
+									<FlexBox>
+										<Label text="{i18n>iStudentAgeText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd sapUiLargeMarginBegin" required="true"/>
+										<ComboBox id="iStudentAgeId" items="{path : 'dataModel>/AgeDetails'}" class="sapUiSmallMarginBegin"
+											selectionChange="_OnSelectInterStudentAge" width="18rem">
+											<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+										</ComboBox>
+									</FlexBox>
+									<FlexBox>
+										<Label text="{i18n>iStudentMobileText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd sapUiLargeMarginBegin" required="true"/>
+										<Input id="iStudentMobileId" placeholder="{i18n>iStudentMobilePlaceholder}" required="true" change="_OnInputInterStudentMobile"
+											width="18rem"/>
+									</FlexBox>
+									<FlexBox>
+										<Label text="{i18n>genderText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd sapUiLargeMarginBegin" required="true"/>
+										<RadioButton id="iStudentGenderMale" text="{i18n>genderMaleText}" select="_OnSelectInterStudentGender"/>
+										<RadioButton id="iStudentGenderFemale" text="{i18n>genderFemaleText}" select="_OnSelectInterStudentGender"/>
+										<RadioButton id="iStudentGenderOthers" text="{i18n>genderOthersText}" select="_OnSelectInterStudentGender"/>
+									</FlexBox>
+									<FlexBox>
+										<Label text="{i18n>iStudentCityText}" class="sapUiSmallMarginTop sapUiSmallMarginEnd sapUiLargeMarginBegin" required="true"/>
+										<ComboBox id="iStudentCityId" items="{path : 'dataModel>/LocationDetails'}" selectionChange="_OnSelectInterStudentCity" width="18rem"
+											class="sapUiTinyMarginBegin">
+											<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+										</ComboBox>
+									</FlexBox>
+								</VBox>
+							</HBox>
+						</content>
+					</Panel>
+					<!--Form 4-->
+					<OverflowToolbar id="view1Form4Id" visible="false">
+						<content>
+							<Title  text="{i18n>form4Title}" class="sapUiLargeMarginBegin" ></Title>
+						</content>
+					</OverflowToolbar>
+					<HBox id="form4BoxId" alignItems="Center" justifyContent="Center" visible="true">
+						<VBox>
+							<FlexBox>
+								<Label text="{i18n>graduateNameText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+								<Input id="gNameId" placeholder="{i18n>graduateNamePlaceholder}" liveChange="_OnInputGraduateStudentName" class="sapUiSmallMarginEnd"
+									width="18rem"/>
+							</FlexBox>
+							<FlexBox>
+								<Label text="{i18n>graduateRollNoText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiMediumMarginEnd" required="true"/>
+								<Input id="gRollNoId" placeholder="{i18n>graduateRollNoPlaceholder}" change="_OnInputGraduateStudentId" class="sapUiTinyMarginBegin"
+									width="18rem"/>
+							</FlexBox>
+							<FlexBox>
+								<Label text="{i18n>graduateAgeText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+								<ComboBox id="gAgeId" items="{path : 'dataModel>/AgeDetails'}" class="sapUiSmallMarginBegin" change="_OnSelectGraduateStudentAge"
+									width="18rem">
+									<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+								</ComboBox>
+							</FlexBox>
+							<FlexBox>
+								<Label text="{i18n>graduateEmailText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+								<Input id="gEmailId" placeholder="{i18n>graduateEmailPlaceholder}" change="_OnInputGraduateStudentEmail" width="18rem"/>
+							</FlexBox>
+							<FlexBox>
+								<Label text="{i18n>graduateBranchText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiMediumMarginEnd" required="true"/>
+								<MultiComboBox id="gBranchId" class="sapUiTinyMarginBegin" items="{path : 'dataModel>/StreamDetails'}"
+									selectionChange="_OnSelectGraduateStudentBranch" width="18rem">
+									<core:Item key="{dataModel>StreamId}" text="{dataModel>StreamName}"/>
+								</MultiComboBox>
+							</FlexBox>
+							<FlexBox>
+								<Label text="{i18n>graduatePlaceText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+								<ComboBox id="gPlaceId" items="{path : 'dataModel>/LocationDetails'}" change="_OnSelectGraduateStudentPlace" width="18rem">
+									<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+								</ComboBox>
+							</FlexBox>
+						</VBox>
+					</HBox>
+					<!--Form 5-->
+					<OverflowToolbar id="view1Form5Id" visible="true">
+						<content>
+							<Title  text="{i18n>form5Title}" class="sapUiLargeMarginBegin" ></Title>
+						</content>
+					</OverflowToolbar>
+					<l:Grid id="form5BankGridFormId" visible="true">
+						<l:content>
+							<Label text="{i18n>customerNameText}" required="true" class="sapUiLargeMarginTop">
+								<layoutData>
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="customerNameId" placeholder="{i18n>customerNamePlaceholder}" liveChange="_OnInputCustomerName" class="sapUiMediumMarginTop">
+								<layoutData>
+									<l:GridData span="L3 M8 S12"></l:GridData>
+								</layoutData>
+							</Input>
+							<Label text="{i18n>customerIdText}" required="true" class="sapUiSmallMarginTop">
+								<layoutData>
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="customerId" placeholder="{i18n>customerIdPlaceholder}" change="_OnInputCustomerId"></Input>
+							<Label text="{i18n>customerAgeText}" class="sapUiSmallMarginTop">
+								<layoutData>
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<ComboBox id="customerAgeId" items="{path : 'dataModel>/AgeDetails'}" selectionChange="_OnSelectCustomerAge" width="20rem">
+								<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+							</ComboBox>
+							<Label text="{i18n>customerPanCardText}" class="sapUiSmallMarginTop">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="customerPancardId" placeholder="{i18n>customerPanCardPlaceholder}" change="_OnInputCustomerPanNumber"></Input>
+							<Label text="{i18n>customerGenderText}" class="sapUiSmallMarginTop">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<RadioButtonGroup id="customerGenderRadioGroupId" columns="3">
+								<RadioButton id="customerGenderMaleText" text="{i18n>customerGenderMaleText}" select="_OnSelectCustomerGender">
+									<!--<layoutData >-->
+									<!--	<l:GridData span="L1 M6 S12"></l:GridData>-->
+									<!--</layoutData>	-->
+								</RadioButton>
+								<RadioButton id="customerGenderFemaleText" text="{i18n>customerGenderFemaleText}" select="_OnSelectCustomerGender">
+									<!--<layoutData >-->
+									<!--	<l:GridData span="L2 M6 S12"></l:GridData>-->
+									<!--</layoutData>-->
+								</RadioButton>
+								<!--<RadioButton text="{i18n>customerGenderOthersText}" select="_OnSelectCustomerGender">-->
+								<!--	<layoutData >-->
+								<!--		<l:GridData span="L1 M6 S12"></l:GridData>-->
+								<!--	</layoutData>-->
+								<!--</RadioButton>-->
+							</RadioButtonGroup>
+							<Label text="{i18n>customerAccountTypeText}" class="sapUiSmallMarginTop">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<RadioButtonGroup id="customerAccountTypeRadioGroupId" columns="2">
+								<RadioButton id="customerAccountTypeCurrent" text="{i18n>customerAccountTypeCurrentText}" select="_OnSelectCustomerAccount">
+									<!--<layoutData >-->
+									<!--	<l:GridData span="L1 M6 S12"></l:GridData>-->
+									<!--</layoutData>-->
+								</RadioButton>
+								<RadioButton id="customerAccountTypeSavings" text="{i18n>customerAccountTypeSavingsText}" select="_OnSelectCustomerAccount">
+									<!--<layoutData >-->
+									<!--	<l:GridData span="L1 M6 S12"></l:GridData>-->
+									<!--</layoutData>-->
+								</RadioButton>
+							</RadioButtonGroup>
+							<Label text="{i18n>customerAddOnText}" class="sapUiSmallMarginTop">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<MultiComboBox id="customerAddOnId" items="{path : 'dataModel>/AddOnDetails'}" selectionChange="_OnSelectCustomerBenefits">
+								<core:Item key="{dataModel>AddOnId}" text="{dataModel>AddOnName}"/>
+							</MultiComboBox>
+							<Label text="{i18n>customerBranchText}" class="sapUiSmallMarginTop">
+								<layoutData >
+									<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+								</layoutData>
+							</Label>
+							<Input id="customerBranchId" placeholder="{i18n>customerBranchPlaceholder}" change="_OnInputCustomerBranch"></Input>
+						</l:content>
+					</l:Grid>
+					<!--Form 6-->
+					<OverflowToolbar id="view1Form6Id"  visible="false">
+						<content>
+							<Title  text="{i18n>form6Title}" class="sapUiLargeMarginBegin"></Title>
+						</content>
+					</OverflowToolbar>
+					<VBox id="dynamicForm6VBoxId" visible="false"/>
+					<FlexBox justifyContent="Center">
+						<VBox id="dynamicFormSubmitButtonInFlexBoxInViewId" class="sapUiLargeMarginBegin" visible="false"/>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

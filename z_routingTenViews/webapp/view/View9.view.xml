@@ -1,0 +1,118 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View9" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showNavButton="true" navButtonPress="_OnPressBackGoToView1">
+				<content>
+					<IconTabBar id="iconTabBarInView9Id" class="sapUiResponsiveContentPadding" backgroundDesign="Transparent">
+						<items>
+							<IconTabFilter id="form1IconTabFilterId" icon="sap-icon://table-view" text="Student Details" enabled="false" key="form1tab1" iconColor="Positive">
+								<!--FORM1-->
+								<Table id="allStudentDetailsTableId" items="{dataModel>/StudentDetailsEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+										<OverflowToolbar>
+											<content>
+												<Title text="{i18n>form1DataTitle}"></Title>
+											</content>
+										</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteStudentDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveStudentFromStudentDetailsTable" enabled="false"></Button>
+											<Button id="sortStudentDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortStudentDetailsTable"></Button>
+											<Button id="groupByStudentDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByStudentTable"></Button>
+											<SearchField id="searchInStudentDetailsId" width="300px" search="_OnSearchFilterStudentDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Name"></Text>	
+										</Column>
+										<Column>
+											<Text text="Age"></Text>
+										</Column>
+										<Column>
+											<Text text="Gender"></Text>
+										</Column>
+										<Column>
+											<Text text="Father's Name"></Text>
+										</Column>
+										<Column>
+											<Text text="Father's Mobile"></Text>
+										</Column>
+										<Column>
+											<Text text="Preferred Stream"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenForm1Fragment" type="Active">
+											<cells>
+												<Text text="{dataModel>Name}"></Text>
+												<Text text="{dataModel>Age}"></Text>
+												<Text text="{dataModel>Gender}"></Text>
+												<Text text="{dataModel>FatherName}"></Text>
+												<Text text="{dataModel>FatherMobile}"></Text>
+												<Text text="{dataModel>PreferredStream}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+							<IconTabFilter  id="form2IconTabFilterId" icon="sap-icon://employee" text="Employee Details" enabled="false" key="form2tab2" 
+											iconColor="Negative">
+								<!--Form2-->
+								<List id="employeeDetailsStandardListId" headerText="{i18n>form2DataTitle}" items="{dataModel>/EmployeeDetailsEntity}">
+									<StandardListItem 
+										title="{dataModel>Id}"
+										description="{dataModel>Name}"
+										info="{dataModel>Age}"
+										press="_OnClickStandardListOpenForm2Fragment"
+										type="Active">
+									</StandardListItem>
+								</List>
+							</IconTabFilter>
+							<IconTabFilter id="form3IconTabFilterId" icon="sap-icon://list" text="Inter Student Form" enabled="false" key="form3tab3" iconColor="Critical">
+								<List id="interStudentCustomListItemId" headerText="{i18n>form3DataTitle}" mode="SingleSelectMaster" 
+										items="{dataModel>/InterStudentDetailsEntity}">
+									<CustomListItem>
+										<HBox>
+											<VBox class="sapUiMediumMarginBegin sapUiMediumMarginTopBottom" >
+												<FlexBox  class="sapUiTinyMarginTopBottom" >
+													<Label text="Name :"></Label>
+													<Text text="{dataModel>Name}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+												<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="Id :"></Label>
+													<Text text="{dataModel>Id}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+												<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="Age :"></Label>
+													<Text text="{dataModel>Age}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+												<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="Mobile :"></Label>
+													<Text text="{dataModel>Mobile}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+													<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="Gender :"></Label>
+													<Text text="{dataModel>Gender}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+													<FlexBox class="sapUiTinyMarginTopBottom">
+													<Label text="City :"></Label>
+													<Text text="{dataModel>City}" class="sapUiTinyMarginBegin"></Text>
+												</FlexBox>
+											</VBox>
+										</HBox>
+									</CustomListItem>
+								</List>	
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

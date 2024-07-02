@@ -1,0 +1,77 @@
+<mvc:View controllerName="com.dpzemployeeHrForm.controller.hrForm" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Digital Employees Pvt. Ltd.- HR Actions" showNavButton="true" navButtonPress="_OnBackButtonPressGoToEmployeeDetailsForm">
+				<content>
+					<Table id="hrActionOnEmployeeTableId" items="{employeeHrModel>/HrData}" mode="SingleSelectLeft" alternateRowColors="true" >
+						<headerToolbar>
+							<OverflowToolbar>
+								<content>
+									<Title text="Employee Details"></Title>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+					<columns>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Name"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Id"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Email"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Mobile"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="DOB"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="DOJ"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Experience"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Status"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type ="Active">
+							<cells>
+								<Text text="{employeeHrModel>Name}"></Text>
+								<Text text="{employeeHrModel>Id}"></Text>
+								<Text text="{employeeHrModel>Email}"></Text>
+								<Text text="{employeeHrModel>Mobile}"></Text>
+								<Text text="{employeeHrModel>DateOfBirth}"></Text>
+								<Text text="{employeeHrModel>DateOfJoining}"></Text>
+								<Text text="{employeeHrModel>Experience}"></Text>
+								<Text text="{employeeHrModel>Status}"></Text>
+								<!--<Text text="{multiFormModel>Location}"></Text>-->
+								
+								
+								<!--<Text text="{multiFormModel>Place}"></Text>-->
+								<!--<HBox  justifyContent="Center">-->
+								<!--	<Button icon="sap-icon://hint" type="Emphasized" tooltip="Information" class="sapUiSmallMarginBegin" press="_OnPressInfoButtonDisplayLabelAndTextInEmployeeFormData" ></Button>-->
+								<!--	<Button icon="sap-icon://delete" type="Reject" tooltip="Delete" class="sapUiSmallMarginBegin" press="_OnPressDeleteButtonDeleteRowInEmployeeFormData"></Button>-->
+								<!--</HBox>-->
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button id="dispositionedEmployeeButtonId" text="Dispositioned Candidates" type="Emphasized" press="_OnPressDispositionedGoToViewHrActionsView"></Button>
+							<Button id="approveEmployeeButtonId" icon="sap-icon://employee-approvals" text="Approve" type="Accept" press="_OnPressOpenApproveRejectFragment" enabled="false"></Button>
+							<Button id="rejecteEmployeeButtonId" icon="sap-icon://employee-rejections" text="Reject" type="Reject" press="_OnPressOpenApproveRejectFragment" enabled="false"></Button>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

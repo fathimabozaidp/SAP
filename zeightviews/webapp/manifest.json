@@ -1,0 +1,195 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "com.dpzeightviews",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.dpzeightviews.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing":{
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.dpzeightviews.view",
+                "controlAggregation": "pages",
+                "controlId": "appId"
+			},
+			"routes":[
+				{
+					"pattern" : "",
+					"name" : "schoolform",
+					"target": "schoolform"
+				},
+					{
+					"pattern" : "intermediateform",
+					"name" : "intermediateform",
+					"target": "intermediateform"
+				},
+					{
+					"pattern" : "graduateform",
+					"name" : "graduateform",
+					"target": "graduateform"
+				},
+					{
+					"pattern" : "employeeform",
+					"name" : "employeeform",
+					"target": "employeeform"
+				},	{
+					"pattern" : "schoolformdata",
+					"name" : "schoolformdata",
+					"target": "schoolformdata"
+				},
+					{
+					"pattern" : "intermediateformdata",
+					"name" : "intermediateformdata",
+					"target": "intermediateformdata"
+				},
+					{
+					"pattern" : "graduateformdata",
+					"name" : "graduateformdata",
+					"target": "graduateformdata"
+				},
+					{
+					"pattern" : "employeeformdata",
+					"name" : "employeeformdata",
+					"target": "employeeformdata"
+				}
+			],
+			"targets":{
+				"schoolform": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "schoolform"
+				},
+				"intermediateform": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "intermediateform"
+				},
+				"graduateform": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "graduateform"
+				},
+				"employeeform": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "employeeform"
+				},
+				"schoolformdata": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "schoolformdata"
+				},
+				"intermediateformdata": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "intermediateformdata"
+				},
+				"graduateformdata": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "graduateformdata"
+				},
+				"employeeformdata": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"controlAggregation": "pages",
+					"controlId": "appId",
+					"viewName": "employeeformdata"
+				}
+				
+			}
+		},
+		"rootView": {
+			"viewName": "com.dpzeightviews.view.App",
+			"type": "XML",
+			"async" : true,
+			"id": "appId"
+		}
+	}
+}

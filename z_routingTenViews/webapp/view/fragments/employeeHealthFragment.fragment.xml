@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog id="employeeHealthFragmentDialogId" title="{i18n>employeeHealthFragmentDialogTitle}" contentWidth="1000px">
+		<Panel id="form3InView4PanelId" width="auto" class="sapUiResponsiveMargin" accessibleRole="Region" visible="true">
+			<content>
+				<HBox alignItems="Center" justifyContent="Center">
+					<VBox>
+						<FlexBox>
+							<Label text="{i18n>employeeIdText}" class="sapUiSmallMarginTop sapUiMediumMarginEnd sapUiLargeMarginBegin" required="true"/>
+							<Input id="employeeEditIdInHealthForm" placeholder="{i18n>employeeIdPlaceholder}" class="sapUiMediumMarginBegin" required="true"
+								value="{dataModel>/SelectedRow/EmployeeId}"	editable="false" width="18rem"/>
+						</FlexBox>
+						<FlexBox>
+							<Label text="{i18n>employeeMedicalInsuranceText}" class="sapUiSmallMarginTop" required="true"/>
+							<RadioButtonGroup id="allergiesRadioButtonGroupId" columns="3">
+								<RadioButton id="employeeEditMedicalInsuranceYesId" text="{i18n>employeeAllergyYesText}" class="sapUiTinyMarginBegin"/>
+								<RadioButton id="employeeEditMedicalInsuranceNoId" text="{i18n>employeeAllergyNoText}" />
+							</RadioButtonGroup>
+						</FlexBox>
+						<FlexBox>
+							<Label text="{i18n>employeeAllergiesListText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd" required="true"/>
+							<Input id="employeeEditAllergiesListId" placeholder="{i18n>employeeAllergiesListPlaceholder}" required="true" class="sapUiMediumMarginBegin"
+								value="{dataModel>/SelectedRow/AllergiesList}" width="18rem"/>
+						</FlexBox>
+						<FlexBox>
+							<Label text="{i18n>employeeMedicationsListText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd" required="true"/>
+							<Input id="employeeEditMedicationsListId" placeholder="{i18n>employeeMedicationsListPlaceholder}" required="true" class="sapUiSmallMarginBegin"
+								value="{dataModel>/SelectedRow/MedicationsList}" width="18rem"/>
+						</FlexBox>
+						<FlexBox>
+							<Label text="{i18n>iStudentCityText}" class="sapUiSmallMarginTop sapUiMediumlMarginEnd sapUiLargeMarginBegin" required="true"/>
+							<ComboBox id="employeeEditCityInForm3Id" items="{path : 'dataModel>/LocationDetails'}" 
+								selectedKey="{dataModel>/SelectedRow/EmployeeCity}" width="18rem" class="sapUiLargeMarginBegin" editable="false">
+								<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+							</ComboBox>
+						</FlexBox>
+					</VBox>
+				</HBox>
+			</content>
+		</Panel>
+		<HBox alignItems="Center" justifyContent="Center">
+			<Button id="saveEditEmployeeHealthDetailsButtonId" text="{i18n>saveButtonText}" type="Emphasized" press="_OnPressSaveEdittedEmployeeHealthDetails"></Button>
+		</HBox>
+		<endButton>
+			<Button id="editEmployeeHalthFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseEditEmployeeHealthFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

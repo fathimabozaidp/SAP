@@ -1,0 +1,56 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View6" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showNavButton="true" navButtonPress="_OnPressBackGoToView1">
+				<content>
+					<List id="invoiceDetailsCustomListItemId" headerText="{i18n>form6DataTitle}" mode="SingleSelectMaster"
+						items="{dataModel>/InvoiceDetailsEntity}">
+						<CustomListItem>
+							<HBox>
+								<VBox class="sapUiMediumMarginBegin sapUiMediumMarginTopBottom">
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Id :"></Label>
+										<Text text="{dataModel>InvoiceId}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Date :"></Label>
+										<Text text="{dataModel>InvoiceDate}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Time :"></Label>
+										<Text text="{dataModel>InvoiceTime}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice PAN :"></Label>
+										<Text text="{dataModel>InvoicePanNumber}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Payment Mode :"></Label>
+										<Text text="{dataModel>InvoicePaymentMode}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Delivery Time :"></Label>
+										<Text text="{dataModel>InvoiceDeliveryTime}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice State Code :"></Label>
+										<Text text="{dataModel>InvoiceStateCode}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Value:"></Label>
+										<Text text="{dataModel>InvoiceValue}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+									<FlexBox class="sapUiTinyMarginTopBottom">
+										<Label text="Invoice Payment Id :"></Label>
+										<Text text="{dataModel>InvoicePaymentId}" class="sapUiTinyMarginBegin"></Text>
+									</FlexBox>
+								</VBox>
+							</HBox>
+						</CustomListItem>
+					</List>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

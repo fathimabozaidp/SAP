@@ -1,0 +1,73 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog id="employeeFragmentDialogId" title="{i18n>employeeFragmentDialogTitle}" contentWidth="1000px">
+		<l:Grid visible="true">
+			<l:content>
+				<Label text="{i18n>employeeNameText}" required="true" class="sapUiLargeMarginTop" textAlign="Begin">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12" linebreak="true"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="employeeEditNameId" placeholder="{i18n>employeeNamePlaceholder}" class="sapUiMediumMarginTop"
+					change="_OnLeaveFocusAllFieldsOfEmployeeForm" value="{dataModel>/SelectedRow/EmployeeName}">
+					<layoutData>
+						<l:GridData span="L3 M8 S12"></l:GridData>
+					</layoutData>
+				</Input>
+				<Label text="{i18n>employeeIdText}" class="sapUiSmallMarginTop" textAlign="Begin" required="true">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="employeeEditId" placeholder="{i18n>employeeIdPlaceholder}" change="_OnLeaveFocusAllFieldsOfEmployeeForm"
+					value="{dataModel>/SelectedRow/EmployeeId}" enabled="false"></Input>
+				<Label text="{i18n>employeeAgeText}" class="sapUiSmallMarginTop" required="true">
+					<layoutData>
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<ComboBox id="employeeEditAgeId" items="{path : 'dataModel>/AgeDetails'}" width="20rem" 
+					selectedKey="{dataModel>/SelectedRow/EmployeeAge}" selectionChange="_OnLeaveFocusAllFieldsOfEmployeeForm">
+					<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+				</ComboBox>
+				<Label text="{i18n>genderText}" class="sapUiSmallMarginTop" required="true">
+					<layoutData >
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<RadioButtonGroup id="employeeGenderRadioButtonGroupId" columns="3">
+					<RadioButton id="employeeEditGenderMaleId" text="{i18n>genderMaleText}" select="_OnLeaveFocusAllFieldsOfEmployeeForm">
+						<layoutData >
+							<l:GridData span="L1 M6 S12"></l:GridData>
+						</layoutData>
+					</RadioButton>
+					<RadioButton id="employeeEditGenderFemaleId" text="{i18n>genderFemaleText}" select="_OnLeaveFocusAllFieldsOfEmployeeForm">
+						<layoutData >
+							<l:GridData span="L2 M6 S12"></l:GridData>
+						</layoutData>
+					</RadioButton>
+				</RadioButtonGroup>
+				<Label text="{i18n>employeeEmailText}" required="true" class="sapUiSmallMarginTop">
+					<layoutData>
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="employeeEditEmailId" placeholder="{i18n>employeeEmailTextPlaceholder}" 
+					value="{dataModel>/SelectedRow/EmployeeEmail}" change="_OnLeaveFocusAllFieldsOfEmployeeForm"></Input>
+				<Label text="{i18n>employeeLocationText}" required="true" class="sapUiSmallMarginTop">
+					<layoutData>
+						<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<MultiComboBox id="employeeEditLocationId" items="{path : 'dataModel>/LocationDetails'}">
+					<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+				</MultiComboBox>
+			</l:content>
+		</l:Grid>
+		<HBox alignItems="Center" justifyContent="Center">
+			<Button id="saveEditEmployeeDetailsButtonId" text="{i18n>saveButtonText}" type="Emphasized" press="_OnPressSaveEdittedEmployeeDetails"></Button>
+		</HBox>
+		<endButton>
+			<Button id="editEmployeeFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseEditEmployeeFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

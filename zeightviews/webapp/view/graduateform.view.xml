@@ -1,0 +1,126 @@
+<mvc:View controllerName="com.dpzeightviews.controller.graduateform" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Ravindra College of Engineering for Women's" navButtonPress="_OnPressBackButtonGoToIntermediateForm"  showNavButton="true">
+				<content>
+					<f:SimpleForm
+						id="graduationDetailsFormId"
+						title="Student Details Form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Input id="gNameId" placeholder="Enter your name" required="true" />
+							
+							<Label text="Roll No" design="Bold"/>
+							<Input id="gRollNoId" placeholder="Enter Roll No"  required="true"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<DatePicker id="gDateOfBirthId" placeholder="Enter Date" required="true"  change="calculateAge" displayFormat="dd.MM.YYYY" valueFormat="dd.MM.YYYY"/>
+							
+							<Label text="Age" design="Bold" required="true"/>
+							<Input id="gAgeId" placeholder="Age" editable="false"></Input>
+							
+							<Label text="Branch" design="Bold"/>
+							<Input id="gBranchId" placeholder="Enter Branch" required="true"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Input id="gEmailId" placeholder="Enter Email" required="true"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Input id="gFatherNameId" placeholder="Enter Father's Name" required="true"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Input id="gMobileId" placeholder="Enter Father's Mobile Number"  required="true"/>
+							
+							<Label text="Place" design="Bold"/>
+							<Input id="gPlaceId" placeholder="Enter Place"  required="true"/>
+						</f:content>
+					</f:SimpleForm>
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Submit" id="submitGraduateFormButtonId" class="sapUiLargeMarginBegin" type="Emphasized" press="_OnPressSubmitButtonDisplayGraduateTable"></Button>
+					</FlexBox>
+					<Table id="graduateTableId" items="{multiFormModel>/GraduateData}" selectionChange="_OnPressRowGoToEditGraduateForm" 
+							mode="SingleSelectMaster" inset="true">
+					<headerToolbar>
+						<OverflowToolbar>
+							<content>
+								<Title text="Graduate Student Details"></Title>
+							</content>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Name"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Roll No"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="DOB"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Age"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Branch"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Email"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Father's Name"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Father's Mobile"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Place"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Actions"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Active">
+							<cells>
+								<Text text="{multiFormModel>Name}"></Text>
+								<Text text="{multiFormModel>RollNo}"></Text>
+								<Text text="{multiFormModel>DOB}"></Text>
+								<Text text="{multiFormModel>Age}"></Text>
+								<Text text="{multiFormModel>Branch}"></Text>
+								<Text text="{multiFormModel>Email}"></Text>
+								<Text text="{multiFormModel>FatherName}"></Text>
+								<Text text="{multiFormModel>FatherMobile}"></Text>
+								<Text text="{multiFormModel>Place}"></Text>
+								<HBox  justifyContent="Center">
+									<Button icon="sap-icon://hint" type="Emphasized" tooltip="Information" class="sapUiSmallMarginBegin" press="_OnPressInfoButtonDisplayLabelAndTextInGraduateFormData" ></Button>
+									<Button icon="sap-icon://delete" type="Reject" tooltip="Delete" class="sapUiSmallMarginBegin" press="_OnPressDeleteButtonDeleteRowInGraduateForm"></Button>
+								</HBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button text="School Form" type="Emphasized" press="_OnPressSchoolGoToSchoolFormView"></Button>
+							<Button text="Intermediate Form" type="Emphasized" press="_OnPressIntermediateGoToIntermediateFormView"></Button>
+							<Button text="Employee Form" type="Emphasized" press="_OnPressEmployeeGoToEmployeeFormView"></Button>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

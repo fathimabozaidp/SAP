@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form"> 
+	<Dialog id="form2IntermediateFormFragmentDialogId" title="{i18n>form2FragmentTitle}" contentWidth="700px">
+		<form:SimpleForm
+			layout="ResponsiveGridLayout" 
+			editable="true"
+			labelSpanXL="6" 
+			labelSpanL="6" 
+			labelSpanM="6" 
+			labelSpanS="6" 
+			emptySpanXL="3"
+			emptySpanL="3"
+			emptySpanM="3" 
+			emptySpanS="3" 
+			columnsXL="6" 
+			columnsL="3" 
+			columnsM="3">
+				<Label text="{i18n>employeeNameText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Name}"></Text>
+				
+				<Label text="{i18n>employeeIdText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Id}"></Text>
+				
+				<Label text="{i18n>employeeAgeText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Age}"></Text>
+				
+				<Label text="{i18n>employeeMobileText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Mobile}"></Text>
+				
+				<Label text="{i18n>employeeEmailText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Email}"></Text>
+				
+				<Label text="{i18n>employeeCompanyText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Company}"></Text>
+				
+				<Label text="{i18n>employeeLocationText}"></Label>
+				<Text text="{dataModel>/SelectedItemFromList/Location}"></Text>
+				
+			</form:SimpleForm>
+		<endButton>
+			<Button id="form2IntermediateFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseForm2IntermediateFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Dialog id="billingsimpleFormDialogId" title="Billing Details" contentWidth="700px">
+		<f:SimpleForm id="billingSimpleFormId"
+			title="Billing Form" 
+			layout="ResponsiveGridLayout"
+			labelSpanS = "12"
+			labelSpanL = "4"
+			labelSpanXL = "-1"
+			labelSpanM = "5"
+			emptySpanS = "0"
+			emptySpanM = "3"
+			emptySpanL = "0"
+			emptySpanXL = "-1"
+			editable="true">
+			<f:content>
+				<Label text="Billing Id" design="Bold"/>
+				<Input id="billingIdInput"/>
+				<Label text="Billing Date" design="Bold"/>
+				<Input type="Date" id="billingDateInput"/>
+				<Label text="Billing Amount" design="Bold"/>
+				<Input id="billingAmountInput"/>
+				<Label text="Billing GST" design="Bold"/>
+				<Input id="billingGstInput"/>
+				<Label text="Billing City" design="Bold"/>
+				<Input id="billingCityInput"/>
+			</f:content>
+		</f:SimpleForm>
+		<FlexBox justifyContent="Center" alignItems="Center">
+			<Button text="Submit" id="submitButtonId" type="Emphasized" press="onPressSubmitButton"></Button>
+		</FlexBox>
+		<endButton>
+			<Button text="close" press="onPressCloseFragment" type="Reject"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

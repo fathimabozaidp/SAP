@@ -1,0 +1,117 @@
+<mvc:View controllerName="com.dpzemployeeHrForm.controller.editEmployeeDetails" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page title="Digital Persons's Pvt. Ltd" showNavButton="true" navButtonPress="_OnBackButtonPressGoToEmployeeDetailsForm">
+				<content>
+					<uxap:ObjectPageLayout>
+						<uxap:headerTitle>
+							<uxap:ObjectPageDynamicHeaderTitle>
+								<uxap:expandedHeading>
+										<Title text="Edit Employee Details"/>
+								</uxap:expandedHeading>          
+							</uxap:ObjectPageDynamicHeaderTitle>
+						</uxap:headerTitle>
+						<uxap:sections>
+							<uxap:ObjectPageSection>
+								<uxap:subSections>
+									<uxap:ObjectPageSubSection>
+										<VBox alignItems="Center" justifyContent="Center">
+											<!--NAME-->
+											<HBox>
+												<HBox>
+													<VBox justifyContent="Center" alignContent="Center">
+														<Label text="Name" required="true" class="sapUiMediumMarginEnd"  ></Label>
+													</VBox>
+												</HBox>
+												<HBox class="sapUiMarginLargeBegin"  >
+													<HBox justifyContent="Start" alignItems="Start" >
+														<Input id="employeeEdittedNameId" placeholder="Enter Name" class="sapUiSmallMarginBegin" required="true" value="{employeeHrModel>/EdittedEmployeeData/Name}" liveChange="_OnChangeValidateEdittedName"></Input>
+													</HBox>
+												</HBox>
+											</HBox>
+											<HBox>
+												<HBox justifyContent="End">
+													<VBox justifyContent="Center" alignContent="Center">
+														<Label text="Id" required="true" class="sapUiMediumMarginEnd"></Label>
+													</VBox>
+												</HBox>
+												<HBox justifyContent="Start">
+													<VBox>
+														<Input id="employeeEdittedId" placeholder="Enter Id" class="sapUiLargeMarginBegin"  required="true"
+																value="{employeeHrModel>/EdittedEmployeeData/Id}" 
+																editable="false" change="_OnChangeValidateEdittedId"></Input>
+													</VBox>
+												</HBox>
+												
+											
+											</HBox>
+											<HBox>
+												<VBox justifyContent="Center" alignContent="Center">
+													<Label text="Email" class="sapUiLargeMarginEnd"></Label>
+												</VBox>
+												<VBox>
+													<Input id="employeeEdittedEmailId" placeholder="Enter Email" class="sapUiSmallMarginBegin"  value = "{employeeHrModel>/EdittedEmployeeData/Email}" change="_OnChangeValidateEdittedEmail"></Input>
+												</VBox>
+											</HBox>
+											<HBox>
+												<VBox justifyContent="Center" alignContent="Center">
+													<Label text="Mobile Number" class="sapUiTinyMarginEnd"></Label>
+												</VBox>
+												<VBox>
+													<Input id="employeeEdittedMobileId" placeholder="Enter Mobile Number"  value="{employeeHrModel>/EdittedEmployeeData/Mobile}" change="_OnChangeValidateEdittedMobile"></Input>
+												</VBox>	
+											</HBox>
+											<HBox>
+												<VBox justifyContent="Center" alignContent="Center">
+													<Label text="Date of Birth" required="true" class="sapUiLargeMarginEnd"></Label>
+												</VBox>
+												<VBox>
+													<DatePicker id="employeeEdittedBirthDateId" valueFormat="dd.MM.YYYY" displayFormat="dd.MM.YYYY" value="{employeeHrModel>/EdittedEmployeeData/DateOfBirth}" change="_OnChangeValidateEdittedDOB"></DatePicker>
+												</VBox>	
+											</HBox>
+											<HBox>
+												<VBox justifyContent="Center" alignContent="Center">
+													<Label text="Date of Joining" required="true" class="sapUiMediumMarginEnd"></Label>
+												</VBox>
+												<VBox>
+													<DatePicker id="employeeEdittedJoiningDateId" valueFormat="dd.MM.YYYY" displayFormat="dd.MM.YYYY" value="{employeeHrModel>/EdittedEmployeeData/DateOfJoining}" change="_OnChangeValidateEdittedDOJ"></DatePicker>
+												</VBox>	
+											</HBox>
+											<HBox>
+												<VBox justifyContent="Center" alignContent="Center">
+													<Label text="Experience" required="true" class="sapUiLargeMarginEnd"></Label>
+												</VBox>
+												<VBox>
+													<Select id="employeeEdittedExperienceId"
+															items="{
+																path:'/ExperienceData'
+															}"
+															forceSelection="true"
+															selectedKey="{employeeHrModel>/EdittedEmployeeData/Experience}"
+															change="_OnChangeValidateEdittedExperience" 
+															
+													>
+														<core:Item key="{yearsId}" text="{years}" />
+													</Select>
+												</VBox>	
+											</HBox>
+											<HBox>
+												<VBox justifyContent="Center" alignContent="Center">
+													<Label></Label>
+												</VBox>
+												<VBox>
+													<Button id="saveEdittedEmployeeDetailsToTable" text="Save" type="Emphasized" press="_OnSaveUpdateDetailsToEmployeeTable"></Button>
+												</VBox>	
+											</HBox>
+										</VBox>
+									</uxap:ObjectPageSubSection>
+								</uxap:subSections>
+							</uxap:ObjectPageSection>
+						</uxap:sections>
+					</uxap:ObjectPageLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

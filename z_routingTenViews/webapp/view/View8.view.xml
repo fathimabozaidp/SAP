@@ -1,0 +1,19 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View8" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>view8Title}" navButtonPress="_OnPressBackGoToView1" showNavButton="true">
+				<content>
+					<ObjectHeader title="{i18n>form4DataTitle}" binding="{dataModel>/GraduateStudentDetailsEntity}">
+						<ObjectAttribute title="Name" text="{dataModel>Name}"></ObjectAttribute>
+						<ObjectAttribute title="Id" text="{dataModel>Id}"></ObjectAttribute>
+						<ObjectAttribute title="Age" text="{dataModel>Age}"></ObjectAttribute>
+						<ObjectAttribute title="Email" text="{dataModel>Email}"></ObjectAttribute>
+						<ObjectAttribute title="Branch" text="{dataModel>Branch}"></ObjectAttribute>
+						<ObjectAttribute title="Place" text="{dataModel>Place}"></ObjectAttribute>
+					</ObjectHeader>	
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

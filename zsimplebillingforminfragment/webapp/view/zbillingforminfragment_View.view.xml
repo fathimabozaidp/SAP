@@ -1,0 +1,12 @@
+<mvc:View controllerName="com.dpzsimplebillingforminfragment.controller.zbillingforminfragment_View"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="View">
+				<content>
+					<Button id="openSimpleForm" text="Billing Form" class="sapUiSmallMarginBegin" press="onPressOpenBillingForm"></Button>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

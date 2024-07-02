@@ -1,0 +1,113 @@
+<mvc:View controllerName="com.dpzeightviews.controller.schoolform" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="St. Joseph's E.M. High School">
+				<content>
+					<f:SimpleForm
+						 id="studentDetailsFormId"
+						title="Student Details Form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true"
+						columnsL="1"
+						columnsM="1"
+						singleContainerFullSize="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Input id="sNameId" placeholder="Enter your name" required="true" />
+							
+							<Label text="Roll No" design="Bold"/>
+							<Input id="sRollNoId" placeholder="Enter Roll No"  required="true"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<DatePicker id="sDateOfBirthId" placeholder="Enter Date" displayFormat="dd.MM.YYYY" valueFormat="dd.MM.YYYY"/>
+							
+							<Label text="Class" design="Bold"/>
+							<Input id="sClassId" placeholder="Enter Class"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Input id="sFatherNameId" placeholder="Enter Father's Name" required="true"/>
+							
+							<Label text="Mother's Name" design="Bold"/>
+							<Input id="sMotherNameId" placeholder="Enter Mother's Name"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Input id="sMobileId" placeholder="Enter Father's Mobile Number"  required="true"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Input id="sEmailId" placeholder="Enter Email" required="true"/>
+
+						</f:content>
+					</f:SimpleForm>
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Submit" id="submitSchoolFormButtonId" type="Emphasized" press="_OnPressSubmitButtonDisplayStudentTable" class="sapUiLargeMarginBegin"></Button>
+					</FlexBox>
+					<Table id="studentTableId" items="{multiFormModel>/SchoolData}" selectionChange="_OnPressRowGoToEditSchoolForm" 
+							mode="SingleSelectMaster" visible="true">
+					<headerToolbar>
+						<OverflowToolbar>
+							<content>
+								<Title text="Student Details"></Title>
+							</content>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Name"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Roll No"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Father's Name"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Father's Mobile"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Email"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Actions"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type="Active">
+							<cells>
+								<Text text="{multiFormModel>Name}"></Text>
+								<Text text="{multiFormModel>RollNo}"></Text>
+								<Text text="{multiFormModel>FatherName}"></Text>
+								<Text text="{multiFormModel>FatherMobile}"></Text>
+								<Text text="{multiFormModel>Email}"></Text>
+								<!--<Toolbar>-->
+								<HBox justifyContent="Center">
+									<Button icon="sap-icon://hint" type="Emphasized" tooltip="Information" class="sapUiSmallMarginBegin" press="_OnPressInfoButtonDisplayLabelAndTextInSchoolFormData" ></Button>
+									<Button icon="sap-icon://delete" type="Reject" tooltip="Delete" class="sapUiSmallMarginBegin" press="_OnPressDeleteButtonDeleteRowInSchoolForm"></Button>
+								</HBox>
+								<!--</Toolbar>-->
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button text="Intermediate Form" type="Emphasized" press="_OnPressIntermediateGoToIntermediateFormView"></Button>
+							<Button text="Graduate Form" type="Emphasized" press="_OnPresGraduateGoToGraduateFormView"></Button>
+							<Button text="Employee Form" type="Emphasized" press="_OnPressEmployeeGoToEmployeeFormView"></Button>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

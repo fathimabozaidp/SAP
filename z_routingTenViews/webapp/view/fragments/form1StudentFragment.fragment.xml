@@ -1,0 +1,68 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog id="form1StudentFormFragmentDialogId" title="{i18n>form1FragmentTitle}" contentWidth="1000px">
+		<l:Grid visible="true">
+			<l:content>
+				<Label text="{i18n>nameText}" required="true" class="sapUiLargeMarginTop" textAlign="Begin">
+					<layoutData >
+						<l:GridData indent="L3 M4 S11" span="L2 M6 S12" linebreak="true"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="studentEditNameId" value="{dataModel>/SelectedRow/Name}" class="sapUiMediumMarginTop">
+					<layoutData>
+						<l:GridData span="L3 M8 S12"></l:GridData>
+					</layoutData>
+				</Input>
+				<Label text="{i18n>ageText}">
+					<layoutData>
+						<l:GridData indent="L3 M4 S11" span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<ComboBox id="studentEditAgeId" items="{path : 'dataModel>/AgeDetails'}" selectedKey="{dataModel>/SelectedRow/Age}">
+					<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+				</ComboBox>
+				<Label text="{i18n>genderText}" class="sapUiSmallMarginTop">
+					<layoutData >
+						<l:GridData indent="L3 M4 S11" span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<RadioButton id="studentEditGenderMaleId" text="{i18n>genderMaleText}" select="_OnSelectGenderInFragment">
+					<layoutData >
+						<l:GridData span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</RadioButton>
+				<RadioButton id="studentEditGenderFemaleId" text="{i18n>genderFemaleText}" select="_OnSelectGenderInFragment">
+					<layoutData >
+						<l:GridData span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</RadioButton>
+				<Label text="{i18n>fatherNameText}" class="sapUiSmallMarginTop" textAlign="Begin">
+					<layoutData >
+						<l:GridData indent="L3 M4 S11" span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="studentEditFatherNameId" value="{dataModel>/SelectedRow/FatherName}"></Input>
+				<Label text="{i18n>fatherMobileText}" required="true" class="sapUiSmallMarginTop">
+					<layoutData>
+						<l:GridData indent="L3 M4 S11" span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<Input id="studentEditFatherMobileId" value="{dataModel>/SelectedRow/FatherMobile}" editable="false"></Input>
+				<Label text="{i18n>preferredStreamText}" required="true" class="sapUiSmallMarginTop">
+					<layoutData>
+						<l:GridData indent="L3 M4 S11" span="L2 M6 S12"></l:GridData>
+					</layoutData>
+				</Label>
+				<MultiComboBox id="studentEditPreferredStreamId" items="{path : 'dataModel>/StreamDetails'}" selectedKeys="{dataModel>/SelectedRow/PreferredStream}" selectionChange="_OnSelectPreferredStreamInFragment">
+					<core:Item key="{dataModel>StreamId}" text="{dataModel>StreamName}"/>
+				</MultiComboBox>
+				
+			</l:content>
+		</l:Grid>
+		<HBox alignItems="Center" justifyContent="Center">
+			<Button id="saveEditStudentDetailsButtonId" text="{i18n>saveButtonText}" type="Emphasized" press="_OnPressSaveEditStudentDetails"></Button>
+		</HBox>
+		<endButton>
+			<Button id="form1StudentFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseForm1StudentFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

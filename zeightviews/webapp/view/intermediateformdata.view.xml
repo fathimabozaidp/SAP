@@ -1,0 +1,93 @@
+<mvc:View controllerName="com.dpzeightviews.controller.intermediateformdata" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Sri Lakshmi Junior College" navButtonPress="_OnPressBackButtonGoToIntermediateForm" showNavButton="true">
+				<content>
+						<f:SimpleForm
+							id="intermediateDetailsEditFormId"
+							title="Edit Student Details Form" 
+							layout="ResponsiveGridLayout"
+							labelSpanS = "12"
+							labelSpanL = "4"
+							labelSpanXL = "-1"
+							labelSpanM = "5"
+							emptySpanS = "0"
+							emptySpanM = "1"
+							emptySpanL = "4"
+							emptySpanXL = "-1"
+							editable="true"
+							visible="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Input id="iEdittedNameId" placeholder="Enter your name" required="true" value="{multiFormModel>/EdittedIntermediateData/Name}"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Input id="iEdittedRollNoId" placeholder="Enter Roll No"  required="true" value="{multiFormModel>/EdittedIntermediateData/RollNo}"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<DatePicker id="iEdittedDateOfBirthId" placeholder="Enter Date" required="true" change="calculateEdittedAge" value="{multiFormModel>/EdittedIntermediateData/DOB}" displayFormat="dd.MM.YYYY" valueFormat="dd.MM.YYYY"/>
+							
+							<Label text="Age" design="Bold"/>
+							<Input id="iEdittedAgeId" placeholder="Age" editable="false" value="{multiFormModel>/EdittedIntermediateData/Age}" />
+							
+							<Label text="Class" design="Bold"/>
+							<Input id="iEdittedClassId" placeholder="Enter Class" value="{multiFormModel>/EdittedIntermediateData/Class}"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Input id="iEdittedFatherNameId" placeholder="Enter Father's Name" required="true" value="{multiFormModel>/EdittedIntermediateData/FatherName}"/>
+							
+							<Label text="Mother's Name" design="Bold"/>
+							<Input id="iEdittedMotherNameId" placeholder="Enter Mother's Name" value="{multiFormModel>/EdittedIntermediateData/MotherName}"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Input id="iEdittedMobileId" placeholder="Enter Father's Mobile Number"  required="true" value="{multiFormModel>/EdittedIntermediateData/FatherMobile}"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Input id="iEdittedEmailId" placeholder="Enter Email" value="{multiFormModel>/EdittedIntermediateData/Email}"/>
+						</f:content>
+					</f:SimpleForm>
+						<FlexBox justifyContent="Center" alignItems="Center">
+							<Button text="Save" class="sapUiLargeMarginBegin" id="saveEdittedIntermediateFormButtonId" type="Emphasized" press="_OnPressSaveButtonGoToIntermediateForm"></Button>
+						</FlexBox>
+						<f:SimpleForm
+							id="intermediateDetailsLabelTextFormId"
+							title="Student's Details" 
+							visible="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/Name}"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/RollNo}"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/DOB}"/>
+							
+							<Label text="Age" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/Age}" />
+							
+							<Label text="Class" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/Class}"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/FatherName}"/>
+							
+							<Label text="Mother's Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/MotherName}"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/FatherMobile}"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedIntermediateData/Email}"/>
+						</f:content>
+					</f:SimpleForm>
+						<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Cancel" id="cancelButtonId_InIntermediateFormDataLabelText" class="sapUiLargeMarginBegin" type="Reject" press="_OnPressCancelButtonGoToIntermediateForm" visible="false"></Button>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

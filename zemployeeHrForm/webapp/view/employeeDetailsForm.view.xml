@@ -1,0 +1,156 @@
+<mvc:View controllerName="com.dpzemployeeHrForm.controller.employeeDetailsForm" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<App>
+		<!--<pages>-->
+			<Page>
+				<content>
+					<!--OBJECT PAGE WITH SIMPLE FORM-->
+					<uxap:ObjectPageLayout  preserveHeaderStateOnScroll="true" class="sapUiNoContentPadding">
+						<uxap:headerTitle>
+							<uxap:ObjectPageDynamicHeaderTitle>
+								<uxap:expandedHeading>
+									<Title text="Digital Persons's Pvt. Ltd."/>
+								</uxap:expandedHeading>
+							</uxap:ObjectPageDynamicHeaderTitle>
+						</uxap:headerTitle >
+						<!--<uxap:headerContent>-->
+						<!--	<Label text="Digital Personas - Employee Form"/>-->
+						<!--</uxap:headerContent>    -->
+						<uxap:sections fitContainer="true">
+							<uxap:ObjectPageSection title="Employee Details Form"  >
+								<uxap:subSections fitContainer="true" class="sapUiNoContentPadding">
+									<uxap:ObjectPageSubSection>
+										<f:SimpleForm
+											id="employeeDetailsFormId"
+												layout="ResponsiveGridLayout"
+												labelSpanS = "12"
+												labelSpanL = "4"
+												labelSpanXL = "-1"
+												labelSpanM = "5"
+												emptySpanS = "0"
+												emptySpanM = "4"
+												emptySpanL = "4"
+												emptySpanXL = "-1"
+												editable="true"
+										>
+											<f:content>
+												<Label text="Name"></Label>
+												<Input id="employeeNameId" placeholder="Enter Name" required="true" liveChange="_OnChangeValidateName" ></Input>
+												
+												<Label text="Id"></Label>
+												<Input id="employeeId" placeholder="Enter Id" required="true"  change="_OnChangeValidateId"></Input>
+												
+												<Label text="Email"></Label>
+												<Input id="employeeEmailId" placeholder="Enter Email"  change="_OnChangeValidateEmail"></Input>
+												
+												<Label text="Mobile Number"></Label>
+												<Input id="employeeMobileId" placeholder="Enter Mobile Number"  change="_OnChangeValidateMobile"></Input>
+											
+												<Label text="Date of Birth" required="true"></Label>
+												<DatePicker id="employeeBirthDateId" valueFormat="dd.MM.YYYY" displayFormat="dd.MM.YYYY"  change="_OnChangeValidateDOB" ></DatePicker>
+												
+												<Label text="Date of Joining" required="true"></Label>
+												<DatePicker id="employeeJoiningDateId" valueFormat="dd.MM.YYYY" displayFormat="dd.MM.YYYY"  change="_OnChangeValidateDOJ"></DatePicker>
+												
+												<Label text="Experience" required="true"></Label>
+												<Select id="employeeExperienceId" 
+													forceSelection="false" 
+													items="{
+																path:'/ExperienceData'
+															}"
+													change="_OnChangeValidateExperience"
+												>
+													<core:Item key="{yearsId}" text="{years}" />
+												</Select>
+												
+												<Label></Label>
+												<!--<FlexBox alignContent="Center" justifyContent="Center" >-->
+												<HBox alignContent="Center" alignItems="Center" class="sapUiLargeMarginBegin sapUiSmallMarginTop sapUiNoContentPadding">
+													<Button id="submitEmployeeDetailsToTable" text="Submit" type="Emphasized" press="_OnSubmitPushDetailsToEmployeeTable" class="sapUiLargeMarginBegin"></Button>		
+												</HBox>
+												
+											</f:content>
+											<!--SUBMIT BUTTON-->
+											
+										</f:SimpleForm>
+									</uxap:ObjectPageSubSection>
+								</uxap:subSections>
+							</uxap:ObjectPageSection>
+						</uxap:sections>
+					</uxap:ObjectPageLayout>
+				
+					<!--BUTTONS ROW-->
+					<!--<HBox justifyContent="End" alignItems="End" alignContent="End">-->
+					<!--	<HBox justifyContent="Center" alignContent="Center" alignItems="Center">-->
+					<!--		<OverflowToolbar>-->
+								
+					<!--		</OverflowToolbar>	-->
+					<!--	</HBox>-->
+					<!--	<HBox fitContainer="true" justifyContent="End" alignItems="End" alignContent="End">-->
+					<!--		<OverflowToolbar>-->
+								
+					<!--		</OverflowToolbar>-->
+					<!--	</HBox>-->
+					<!--</HBox>-->
+					<!--TABLE-->
+					<Table id="employeeTableId" items="{employeeHrModel>/EmployeeData}" mode="MultiSelect" selectionChange="_OnSelectionCalculateSelectedRowsCount">
+						<headerToolbar>
+							<Toolbar>
+								<ToolbarSpacer />
+									<Text text="Selected Rows: "></Text>
+									<Text id="showsSelectedRowsInputId" text="(0 / 0)"></Text>
+									<Button id="approvedButtonId" icon="sap-icon://approvals" text="Approve" type="Emphasized" press="_OnApprovedGoToHrFormView"></Button>
+									<Button id="editEmployeeButtonId" icon="sap-icon://edit" text="Edit" type="Emphasized" tooltip="Edit" press="_OnEditGoToEditEmployeeDetailsView" enabled="false"></Button>
+									<Button id="deleteEmployeeButtonId" icon="sap-icon://delete" text="Delete" tooltip="Delete" type="Reject" press="_OnDeleteRemoveEmployeeFromTable" enabled="false"></Button>
+									<Button id="sortEmployeeTableButtonId" icon="sap-icon://sort" type="Emphasized" press="_OnPressSortEmployeeTable"></Button>
+									<Button id="groupByEmployeeTableButtonId" icon="sap-icon://group-2" type="Emphasized" press="_OnPressGroupByEmployeeTable"></Button>
+									<SearchField id="searchInEmployeeId" width="300px" search="_OnSearchFilterTable"></SearchField>
+								<!--</ToolbarSpacer>-->
+							</Toolbar>
+						</headerToolbar>
+					<columns>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Name"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Id"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Email"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Mobile"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="DOB"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="DOJ"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Experience"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Status"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type ="Active">
+							<cells>
+								<Text text="{employeeHrModel>Name}"></Text>
+								<Text text="{employeeHrModel>Id}"></Text>
+								<Text text="{employeeHrModel>Email}"></Text>
+								<Text text="{employeeHrModel>Mobile}"></Text>
+								<Text text="{employeeHrModel>DateOfBirth}"></Text>
+								<Text text="{employeeHrModel>DateOfJoining}"></Text>
+								<Text text="{employeeHrModel>Experience}"></Text>
+								<Text text="{employeeHrModel>Status}"></Text>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+				</content>
+			</Page>
+		<!--</pages>-->
+	</App>
+</mvc:View>

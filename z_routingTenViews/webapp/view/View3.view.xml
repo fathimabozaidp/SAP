@@ -1,0 +1,76 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View3" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:uitable="sap.ui.table" xmlns:unified="sap.ui.unified">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showNavButton="true" navButtonPress="_OnPressBackGoToView1">
+				<content>
+					<OverflowToolbar>
+						<content>
+							<Title text="Apparels Tree Table"></Title>
+						</content>
+					</OverflowToolbar>
+					<uitable:TreeTable id="apparelsTreeTableId" rows="{dataModel>/catalog}" visibleRowCount="6">
+						<uitable:columns>
+							<uitable:Column width="15rem">
+								<Label text="Categories"></Label>
+								<uitable:template>
+									<Text text="{dataModel>name}" />
+								</uitable:template>
+							</uitable:Column>
+							<uitable:Column>
+								<Label text="Price"></Label>
+								<uitable:template>
+									<unified:Currency value="{dataModel>amount}" currency="{dataModel>currency}"/>
+								</uitable:template>
+							</uitable:Column>
+						</uitable:columns>
+					</uitable:TreeTable>
+					
+					<OverflowToolbar>
+						<content>
+							<Title text="Family Tree Table" class="sapUiLargeMarginBegin"></Title>
+						</content>
+					</OverflowToolbar>
+					<uitable:TreeTable id="familyTreeTableId" rows="{dataModel>/family}" visibleRowCount="6">
+						<uitable:columns>
+							<uitable:Column>
+								<Label text="Name"></Label>
+								<uitable:template>
+									<Text text="{dataModel>name}"></Text>
+								</uitable:template>
+							</uitable:Column>
+							
+							<uitable:Column>
+								<Label text="Generation"></Label>
+								<uitable:template>
+									<Text text="{dataModel>generation}"></Text>
+								</uitable:template>
+							</uitable:Column>
+							
+							<uitable:Column>
+								<Label text="Relation"></Label>
+								<uitable:template>
+									<Text text="{dataModel>relation}"></Text>
+								</uitable:template>
+							</uitable:Column>
+							
+							<uitable:Column>
+								<Label text="Gender"></Label>
+								<uitable:template>
+									<Text text="{dataModel>gender}"></Text>
+								</uitable:template>
+							</uitable:Column>
+							
+							<uitable:Column>
+								<Label text="Age"></Label>
+								<uitable:template>
+									<Text text="{dataModel>age}"></Text>
+								</uitable:template>
+							</uitable:Column>
+						</uitable:columns>
+					</uitable:TreeTable>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog id="employeeNomineeFragmentDialogId" title="{i18n>employeeNomineeFragmentDialogTitle}" contentWidth="1000px">
+		<HBox id="form4InView4BoxId" alignItems="Center" justifyContent="Center" visible="true">
+			<VBox>
+				<FlexBox>
+					<Label text="{i18n>employeeIdText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+					<Input id="employeeEditIdInForm4" placeholder="{i18n>employeeIdPlaceholder}" class="sapUiSmallMarginBegin" editable="false"
+						value="{dataModel>/SelectedRow/EmployeeId}" width="18rem"/>
+				</FlexBox>
+				<FlexBox>
+					<Label text="{i18n>nomineeNameText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiMediumMarginEnd" required="true"/>
+					<Input id="nomineeEditNameId" placeholder="{i18n>nomineeNamePlaceholder}" width="18rem" class=" sapUiTinyMarginBegin"
+						value="{dataModel>/SelectedRow/NomineeName}"/>
+				</FlexBox>
+				<FlexBox>
+					<Label text="{i18n>nomineeAgeText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+					<ComboBox id="nomineeEditAgeId" items="{path : 'dataModel>/AgeDetails'}" class="sapUiTinyMarginBegin" width="18rem"
+						selectedKey="{dataModel>/SelectedRow/NomineeAge}">
+						<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+					</ComboBox>
+				</FlexBox>
+				<FlexBox>
+					<Label text="{i18n>nomineeRelationshipText}" class="sapUiSmallMarginTop sapUiLargeMarginEnd" required="true"/>
+					<Input id="nomineeEditRelationshipId" placeholder="{i18n>nomineeRelationshipPlaceholder}" value="{dataModel>/SelectedRow/NomineeRelationship}"
+						width="18rem"/>
+				</FlexBox>
+				<FlexBox>
+					<Label text="{i18n>nomineeCityText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiTinyMarginEnd" required="true"/>
+					<ComboBox id="nomineeEditCityId" class="sapUiLargeMarginBegin" items="{path : 'dataModel>/LocationDetails'}"
+						selectedKey="{dataModel>/SelectedRow/NomineeCity}" width="18rem">
+						<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+					</ComboBox>
+				</FlexBox>
+				<FlexBox>
+					<Label text="{i18n>nomineeStateCodeText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+					<ComboBox id="nomineeEditStateId" items="{path : 'dataModel>/StateCode'}" selectedKey="{dataModel>/SelectedRow/NomineeState}" width="18rem">
+						<core:Item key="{dataModel>key}" text="{dataModel>text}"/>
+					</ComboBox>
+				</FlexBox>
+			</VBox>
+		</HBox>
+		<HBox alignItems="Center" justifyContent="Center">
+			<Button id="saveEditEmployeeNomineeDetailsButtonId" text="{i18n>saveButtonText}" type="Emphasized" press="_OnPressSaveEdittedEmployeeNomineeDetails"></Button>
+		</HBox>
+		<endButton>
+			<Button id="editEmployeeNomineeFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseEditEmployeeNomineeFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

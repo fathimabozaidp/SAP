@@ -1,0 +1,18 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View2" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showNavButton="true" navButtonPress="_OnPressBackGoToView1">
+				<content>
+					<!--<headerToolbar>-->
+						<Toolbar>
+							<ToolbarSpacer/>
+							<Button id="addRowInView2ButtonId" icon="sap-icon://add" type="Emphasized" class="sapUiSmallMarginEnd" press="_OnPressAddRowButton"></Button>
+							<Button id="deleteRowInView2ButtonId" icon="sap-icon://delete" type="Emphasized" class="sapUiSmallMarginEnd" press="_OnPressDeleteRowButton"></Button>
+						</Toolbar>
+					<!--</headerToolbar>-->
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

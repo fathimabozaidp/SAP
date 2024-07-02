@@ -1,0 +1,319 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View4" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showNavButton="true" navButtonPress="_OnPressBackGoToView1">
+				<content>
+					<IconTabBar id="iconTabBarId">
+						<items>
+							<IconTabFilter id="employeeFormITFId" icon="sap-icon://table-view" iconColor="Default" text="Employee" key="tabEmployeeForm">
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>form1InView4Title}" class="sapUiLargeMarginBegin"></Title>
+									</content>
+								</OverflowToolbar>
+								<l:Grid visible="true">
+									<l:content>
+										<Label text="{i18n>employeeNameText}" required="true" class="sapUiLargeMarginTop" textAlign="Begin">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12" linebreak="true"></l:GridData>
+											</layoutData>
+										</Label>
+										<Input id="employeeNameId" placeholder="{i18n>employeeNamePlaceholder}" class="sapUiMediumMarginTop"
+											change="_OnLeaveFocusAllFieldsOfEmployeeForm" value="{dataModel>/EmptyForm/EmptyValue}">
+											<layoutData>
+												<l:GridData span="L3 M8 S12"></l:GridData>
+											</layoutData>
+										</Input>
+										<Label text="{i18n>employeeIdText}" class="sapUiSmallMarginTop" textAlign="Begin" required="true">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<Input id="employeeId" placeholder="{i18n>employeeIdPlaceholder}" value="{dataModel>/EmptyForm/EmptyValue}" change="_OnLeaveFocusAllFieldsOfEmployeeForm"></Input>
+										<Label text="{i18n>employeeAgeText}" class="sapUiSmallMarginTop" required="true">
+											<layoutData>
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<ComboBox id="employeeAgeId" items="{path : 'dataModel>/AgeDetails'}" width="20rem" selectionChange="_OnLeaveFocusAllFieldsOfEmployeeForm" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+											<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+										</ComboBox>
+										<Label text="{i18n>genderText}" class="sapUiSmallMarginTop" required="true">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<RadioButtonGroup id="employeeGenderRadioButtonGroupId" columns="3">
+											<RadioButton id="employeeGenderMaleId" text="{i18n>genderMaleText}" select="_OnLeaveFocusAllFieldsOfEmployeeForm" selected="{dataModel>/EmptyForm/EmptyRadioButtonValue}" >
+												<layoutData >
+													<l:GridData span="L1 M6 S12"></l:GridData>
+												</layoutData>
+											</RadioButton>
+											<RadioButton id="employeeGenderFemaleId" text="{i18n>genderFemaleText}" select="_OnLeaveFocusAllFieldsOfEmployeeForm" selected="{dataModel>/EmptyForm/EmptyRadioButtonValue}">
+												<layoutData >
+													<l:GridData span="L2 M6 S12"></l:GridData>
+												</layoutData>
+											</RadioButton>
+										</RadioButtonGroup>
+										<Label text="{i18n>employeeEmailText}" required="true" class="sapUiSmallMarginTop">
+											<layoutData>
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<Input id="employeeEmailId" placeholder="{i18n>employeeEmailTextPlaceholder}" change="_OnLeaveFocusAllFieldsOfEmployeeForm" value="{dataModel>/EmptyForm/EmptyValue}"></Input>
+										<Label text="{i18n>employeeLocationText}" required="true" class="sapUiSmallMarginTop">
+											<layoutData>
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<MultiComboBox id="employeeLocationId" items="{path : 'dataModel>/LocationDetails'}" selectionChange="_OnLeaveFocusAllFieldsOfEmployeeForm" selectedKeys="{dataModel>/EmptyForm/EmptyKeys}" >
+											<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+										</MultiComboBox>
+									</l:content>
+								</l:Grid>
+							</IconTabFilter>
+							<IconTabFilter id="addressFormITFId" icon="sap-icon://multiselect-all" iconColor="Positive" text="Address" key="tabAddressForm"
+								enabled="false">
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>form2InView4Title}" class="sapUiLargeMarginBegin"></Title>
+									</content>
+								</OverflowToolbar>
+								<f:SimpleForm id="employeeAddressDetailsFormId" visible="true" layout="ResponsiveGridLayout" labelSpanS="12" labelSpanL="4" labelSpanXL="-1"
+									labelSpanM="5" emptySpanS="0" emptySpanM="1" emptySpanL="4" emptySpanXL="-1" editable="true">
+									<f:content>
+										<Label text="{i18n>employeeIdText}"></Label>
+										<Input id="eId" placeholder="{i18n>employeeIdPlaceholder}" required="true" editable="false" change="OnLeaveFocusAllFieldsOfAddressForm" value="{dataModel>/EmptyForm/EmptyValue}"></Input>
+										<Label text="{i18n>employeeAddress1Text}"></Label>
+										<Input id="employeeAddress1TextId" placeholder="{i18n>employeeAddress1Placeholder}" required="true" value="{dataModel>/EmptyForm/EmptyValue}"
+											change="OnLeaveFocusAllFieldsOfAddressForm"></Input>
+										<Label text="{i18n>employeeAddress2Text}"></Label>
+										<Input id="employeeAddress2TextId" placeholder="{i18n>employeeAddress2Placeholder}" required="true" value="{dataModel>/EmptyForm/EmptyValue}"
+											change="OnLeaveFocusAllFieldsOfAddressForm"></Input>
+										<Label text="{i18n>employeeCityText}" required="true"></Label>
+										<ComboBox id="employeeCityInForm2Id" items="{path: 'dataModel>/LocationDetails'}" selectionChange="OnLeaveFocusAllFieldsOfAddressForm" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+											<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+										</ComboBox>
+										<Label text="{i18n>employeeStateText}"></Label>
+										<ComboBox required="true" id="employeeStateInForm2Id" items="{path: 'dataModel>/StateCode'}" selectedKey="{dataModel>/EmptyForm/EmptyKey}"
+											selectionChange="OnLeaveFocusAllFieldsOfAddressForm">
+											<core:Item key="{dataModel>key}" text="{dataModel>text}"/>
+										</ComboBox>
+										<Label text="{i18n>employeePostalCodeText}"></Label>
+										<Input id="employeePostalCodeId" placeholder="{i18n>employeePostalCodeTextPlaceholder}" required="true" value="{dataModel>/EmptyForm/EmptyValue}"
+											change="OnLeaveFocusAllFieldsOfAddressForm"></Input>
+										<Label text="{i18n>employeeAddressTypeText}"></Label>
+										<ComboBox required="true" id="employeeAddressTypeId" items="{path: 'dataModel>/AddressType'}" selectedKey="{dataModel>/EmptyForm/EmptyKey}"
+											selectionChange="OnLeaveFocusAllFieldsOfAddressForm">
+											<core:Item key="{dataModel>key}" text="{dataModel>text}"/>
+										</ComboBox>
+									</f:content>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabFilter id="healthFormITFId" icon="sap-icon://table-column" iconColor="Negative" text="Health" key="tabHealthForm" enabled="false">
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>form3InView4Title}" class="sapUiLargeMarginBegin"/>
+									</content>
+								</OverflowToolbar>
+								<Panel id="form3InView4PanelId" width="auto" class="sapUiResponsiveMargin" accessibleRole="Region" visible="true">
+									<content>
+										<HBox alignItems="Center" justifyContent="Center">
+											<VBox>
+												<FlexBox>
+													<Label text="{i18n>employeeIdText}" class="sapUiSmallMarginTop sapUiMediumMarginEnd sapUiLargeMarginBegin" required="true"/>
+													<Input id="employeeIdInHealthForm" placeholder="{i18n>employeeIdPlaceholder}" class="sapUiMediumMarginBegin" required="true" value="{dataModel>/EmptyForm/EmptyValue}"
+														editable="false" width="18rem"/>
+												</FlexBox>
+												<FlexBox>
+													<Label text="{i18n>employeeMedicalInsuranceText}" class="sapUiSmallMarginTop" required="true"/>
+													<RadioButtonGroup id="allergiesRadioButtonGroupId" columns="3">
+														<RadioButton id="employeeMedicalInsuranceYesId" text="{i18n>employeeAllergyYesText}" class="sapUiTinyMarginBegin"
+															select="OnLeaveFocusAllFieldsOfHealthForm" selected="{dataModel>/EmptyForm/EmptyRadioButtonValue}"/>
+														<RadioButton id="employeeMedicalInsuranceNoId" text="{i18n>employeeAllergyNoText}" select="OnLeaveFocusAllFieldsOfHealthForm" selected="{dataModel>/EmptyForm/EmptyRadioButtonValue}"/>
+														<!--<RadioButton id="iStudentGenderOthers" text="{i18n>genderOthersText}" select="_OnSelectInterStudentGender"/>-->
+													</RadioButtonGroup>
+												</FlexBox>
+												<FlexBox>
+													<Label text="{i18n>employeeAllergiesListText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd" required="true"/>
+													<Input id="employeeAllergiesListId" placeholder="{i18n>employeeAllergiesListPlaceholder}" required="true" class="sapUiMediumMarginBegin" value="{dataModel>/EmptyForm/EmptyValue}"
+														change="OnLeaveFocusAllFieldsOfHealthForm" width="18rem"/>
+												</FlexBox>
+												<FlexBox>
+													<Label text="{i18n>employeeMedicationsListText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd" required="true"/>
+													<Input id="employeeMedicationsListId" placeholder="{i18n>employeeMedicationsListPlaceholder}" required="true" class="sapUiSmallMarginBegin" value="{dataModel>/EmptyForm/EmptyValue}"
+														change="OnLeaveFocusAllFieldsOfHealthForm" width="18rem"/>
+												</FlexBox>
+												<!--<FlexBox>-->
+												<!--	<Label text="{i18n>iStudentMobileText}" class="sapUiSmallMarginTop sapUiTinyMarginEnd sapUiLargeMarginBegin" required="true"/>-->
+												<!--	<Input id="iStudentMobileId" placeholder="{i18n>iStudentMobilePlaceholder}" required="true" change="_OnInputInterStudentMobile"-->
+												<!--		width="18rem"/>-->
+												<!--</FlexBox>-->
+												<FlexBox>
+													<Label text="{i18n>iStudentCityText}" class="sapUiSmallMarginTop sapUiMediumlMarginEnd sapUiLargeMarginBegin" required="true"/>
+													<!--<Input id="employeeCityInForm3Id"  editable="false" width="18rem" class="sapUiLargeMarginBegin"/>-->
+													<ComboBox id="employeeCityInForm3Id" items="{path : 'dataModel>/LocationDetails'}" selectionChange="OnLeaveFocusAllFieldsOfHealthForm"
+														width="18rem" class="sapUiLargeMarginBegin" editable="false" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+														<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+													</ComboBox>
+												</FlexBox>
+											</VBox>
+										</HBox>
+									</content>
+								</Panel>
+							</IconTabFilter>
+							<IconTabFilter id="nomineeFormITFId" icon="sap-icon://multi-select" iconColor="Default" text="Nominee" key="tabNomineeForm" enabled="false">
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>form4InView4Title}" class="sapUiLargeMarginBegin"></Title>
+									</content>
+								</OverflowToolbar>
+								<HBox id="form4InView4BoxId" alignItems="Center" justifyContent="Center" visible="true">
+									<VBox>
+										<FlexBox>
+											<Label text="{i18n>employeeIdText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+											<Input id="employeeIdInForm4" placeholder="{i18n>employeeIdPlaceholder}" class="sapUiSmallMarginBegin" editable="false" value="{dataModel>/EmptyForm/EmptyValue}"
+												change="OnLeaveFocusAllFieldsOfNomineeForm" width="18rem"/>
+										</FlexBox>
+										<FlexBox>
+											<Label text="{i18n>nomineeNameText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiMediumMarginEnd" required="true"/>
+											<Input id="nomineeNameId" placeholder="{i18n>nomineeNamePlaceholder}" width="18rem" class=" sapUiTinyMarginBegin" value="{dataModel>/EmptyForm/EmptyValue}"
+												change="OnLeaveFocusAllFieldsOfNomineeForm"/>
+										</FlexBox>
+										<FlexBox>
+											<Label text="{i18n>nomineeAgeText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+											<ComboBox id="nomineeAgeId" items="{path : 'dataModel>/AgeDetails'}" class="sapUiTinyMarginBegin" width="18rem"
+												selectionChange="OnLeaveFocusAllFieldsOfNomineeForm" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+												<core:Item key="{dataModel>AgeId}" text="{dataModel>AgeValue}"/>
+											</ComboBox>
+										</FlexBox>
+										<FlexBox>
+											<Label text="{i18n>nomineeRelationshipText}" class="sapUiSmallMarginTop sapUiLargeMarginEnd" required="true"/>
+											<Input id="nomineeRelationshipId" placeholder="{i18n>nomineeRelationshipPlaceholder}" change="OnLeaveFocusAllFieldsOfNomineeForm" value="{dataModel>/EmptyForm/EmptyValue}"
+												width="18rem"/>
+										</FlexBox>
+										<FlexBox>
+											<Label text="{i18n>nomineeCityText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiTinyMarginEnd" required="true"/>
+											<ComboBox id="nomineeCityId" class="sapUiLargeMarginBegin" items="{path : 'dataModel>/LocationDetails'}"
+												selectionChange="OnLeaveFocusAllFieldsOfNomineeForm" width="18rem" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+												<core:Item key="{dataModel>LocationId}" text="{dataModel>LocationName}"/>
+											</ComboBox>
+										</FlexBox>
+										<FlexBox>
+											<Label text="{i18n>nomineeStateCodeText}" class="sapUiSmallMarginTop sapUiLargeMarginBegin sapUiLargeMarginEnd" required="true"/>
+											<ComboBox id="nomineeStateId" items="{path : 'dataModel>/StateCode'}" selectionChange="OnLeaveFocusAllFieldsOfNomineeForm" width="18rem" 
+											selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+												<core:Item key="{dataModel>key}" text="{dataModel>text}"/>
+											</ComboBox>
+										</FlexBox>
+									</VBox>
+								</HBox>
+							</IconTabFilter>
+							<IconTabFilter id="experienceFormITFId" icon="sap-icon://table-row" iconColor="Critical" text="Experience" key="tabExperienceForm"
+								enabled="false">
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>form5Title}" class="sapUiLargeMarginBegin"></Title>
+									</content>
+								</OverflowToolbar>
+								<l:Grid id="form5InView4Id" visible="true">
+									<l:content>
+										<Label text="{i18n>employeeIdText}" required="true" class="sapUiLargeMarginTop">
+											<layoutData>
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<Input id="employeeInForm5Id" placeholder="{i18n>customerIdPlaceholder}" editable="false" class="sapUiMediumMarginTop"
+											change="OnLeaveFocusAllFieldsOfExperienceForm" value="{dataModel>/EmptyForm/EmptyValue}">
+											<layoutData>
+												<l:GridData span="L3 M8 S12"></l:GridData>
+											</layoutData>
+										</Input>
+										<Label text="{i18n>employeeNameText}" required="true" class="sapUiSmallMarginTop">
+											<layoutData>
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<Input id="employeeNameInForm5Id" placeholder="{i18n>customerNamePlaceholder}" editable="false"
+											change="OnLeaveFocusAllFieldsOfExperienceForm" value="{dataModel>/EmptyForm/EmptyValue}"></Input>
+										<!--<Label text="{i18n>customerGenderText}" class="sapUiSmallMarginTop" required="true">-->
+										<!--	<layoutData >-->
+										<!--		<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>-->
+										<!--	</layoutData>-->
+										<!--</Label>-->
+										<!--<RadioButtonGroup id="customerGenderRadioGroupId" columns="3" >-->
+										<!--<RadioButton id="customerGenderMaleId" text="{i18n>customerGenderMaleText}" select="_OnSelectCustomerGender" editable="false">-->
+										<!--	<layoutData >-->
+										<!--		<l:GridData span="L1 M6 S12"></l:GridData>-->
+										<!--	</layoutData>-->
+										<!--</RadioButton>-->
+										<!--<RadioButton id="customerGenderFemaleId" text="{i18n>customerGenderFemaleText}" select="_OnSelectCustomerGender" editable="false">-->
+										<!--	<layoutData >-->
+										<!--		<l:GridData span="L2 M6 S12"></l:GridData>-->
+										<!--	</layoutData>-->
+										<!--</RadioButton>-->
+										<!--<RadioButton text="{i18n>customerGenderOthersText}" select="_OnSelectCustomerGender">-->
+										<!--	<layoutData >-->
+										<!--		<l:GridData span="L1 M6 S12"></l:GridData>-->
+										<!--	</layoutData>-->
+										<!--</RadioButton>-->
+										<!--</RadioButtonGroup>-->
+										<Label text="{i18n>employeeDepartmentText}" class="sapUiSmallMarginTop" required="true">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<ComboBox id="employeeDepartmentInForm5Id" items="{path : 'dataModel>/DepartmentDetails'}"
+											selectionChange="OnLeaveFocusAllFieldsOfExperienceForm" width="20rem" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+											<core:Item key="{dataModel>key}" text="{dataModel>value}"/>
+										</ComboBox>
+										<Label text="{i18n>employeeCompanyText}" class="sapUiSmallMarginTop" required="true">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<ComboBox id="employeeCompanyId" items="{path : 'dataModel>/CompanyDetails'}" selectionChange="OnLeaveFocusAllFieldsOfExperienceForm"
+											width="20rem" selectedKey="{dataModel>/EmptyForm/EmptyKey}" >
+											<core:Item key="{dataModel>CompanyId}" text="{dataModel>CompanyName}"/>
+										</ComboBox>
+										<Label text="{i18n>employeeExperienceText}" class="sapUiSmallMarginTop" required="true">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<ComboBox id="employeeExperienceInForm5Id" items="{path : 'dataModel>/ExperienceDetails'}"
+											selectionChange="OnLeaveFocusAllFieldsOfExperienceForm" width="20rem" selectedKey="{dataModel>/EmptyForm/EmptyKey}">
+											<core:Item key="{dataModel>key}" text="{dataModel>text}"/>
+										</ComboBox>
+										<Label text="{i18n>employeeSkillsText}" class="sapUiSmallMarginTop" required="true">
+											<layoutData >
+												<l:GridData indent="L4 M4 S11" span="L1 M6 S12"></l:GridData>
+											</layoutData>
+										</Label>
+										<MultiComboBox id="employeeSkillsId" items="{path : 'dataModel>/SkillsDetails'}" selectionChange="OnLeaveFocusAllFieldsOfExperienceForm" selectedKeys="{dataModel>/EmptyForm/EmptyKeys}">
+											<core:Item key="{dataModel>key}" text="{dataModel>value}"/>
+										</MultiComboBox>
+									
+									</l:content>
+								</l:Grid>
+							</IconTabFilter>
+							<IconTabFilter id="knowledgeFormITFId" icon="sap-icon://multiselect-none" iconColor="Negative" text="Knowledge" key="tabKnowledgeForm"
+								enabled="false">
+								<OverflowToolbar>
+									<content>
+										<Title text="{i18n>form6Title}" class="sapUiLargeMarginBegin"></Title>
+									</content>
+								</OverflowToolbar>
+								<VBox id="dynamicForm6InView4VBoxId" visible="true"/>
+								<FlexBox justifyContent="Center">
+									<VBox id="dynamicFormSubmitButtonInView4FlexBoxId" class="sapUiLargeMarginBegin" visible="true"/>
+								</FlexBox>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

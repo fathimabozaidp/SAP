@@ -1,0 +1,341 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View5" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" showNavButton="true" navButtonPress="_OnPressBackGoToView4">
+				<content>
+					<IconTabBar>
+						<items>
+							<IconTabFilter id="form1DataInView5" icon="sap-icon://table-row" iconColor="Default" text="Employee">
+								<Table id="form1DataTableInView5Id" items="{dataModel>/EmployeeIconTabFilterEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+											<OverflowToolbar>
+												<content>
+													<Title text="{i18n>employeeIconTabFilterTableId}"></Title>
+												</content>
+											</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteEmployeeDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveEmployeeFromEmployeeDetailsTable" enabled="false"></Button>
+											<Button id="sortEmployeeDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortEmployeeDetailsTable"></Button>
+											<Button id="groupByEmployeeDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByEmployeeTable"></Button>
+											<SearchField id="searchInEmployeeDetailsId" width="300px" search="_OnSearchFilterEmployeeDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Name"></Text>
+										</Column>
+										<Column>
+											<Text text="Id"></Text>
+										</Column>
+										<Column>
+											<Text text="Age"></Text>
+										</Column>
+										<Column>
+											<Text text="Gender"></Text>
+										</Column>
+										<Column>
+											<Text text="Email"></Text>
+										</Column>
+										<Column>
+											<Text text="Location"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenEditEmployeeFragment" type="Active">
+											<cells>
+												<Text text="{dataModel>EmployeeName}"></Text>
+												<Text text="{dataModel>EmployeeId}"></Text>
+												<Text text="{dataModel>EmployeeAge}"></Text>
+												<Text text="{dataModel>EmployeeGender}"></Text>
+												<Text text="{dataModel>EmployeeEmail}"></Text>
+												<Text text="{dataModel>EmployeeLocation}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+							<IconTabFilter id="form2DataInView5" icon="sap-icon://multiselect-all" iconColor="Positive" text="Address">
+								<Table id="form2DataTableInView5Id" items="{dataModel>/AddressIconTabFilterEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+											<OverflowToolbar>
+												<content>
+													<Title text="{i18n>addressIconTabFilterTableId}"></Title>
+												</content>
+											</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteEmployeeAddressDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveEmployeeFromEmployeeAddressDetailsTable" enabled="false"></Button>
+											<Button id="sortEmployeeAddressDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortEmployeeAddressDetailsTable"></Button>
+											<Button id="groupByEmployeeAddressDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByEmployeeAddressTable"></Button>
+											<SearchField id="searchInEmployeeAddressDetailsId" width="300px" search="_OnSearchFilterEmployeeAddressDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text=" Employee Id"></Text>
+										</Column>
+										<Column>
+											<Text text="Address Line-1"></Text>
+										</Column>
+										<Column>
+											<Text text="Address Line-2"></Text>
+										</Column>
+										<Column>
+											<Text text="City"></Text>
+										</Column>
+										<Column>
+											<Text text="State"></Text>
+										</Column>
+										<Column>
+											<Text text="Zip/PostalCode"></Text>
+										</Column>
+										<Column>
+											<Text text="Address Type"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenEmployeeAddressFragment" type="Active">
+											<cells>
+												<Text text="{dataModel>EmployeeId}"></Text>
+												<Text text="{dataModel>EmployeeAddress1}"></Text>
+												<Text text="{dataModel>EmployeeAddress2}"></Text>
+												<Text text="{dataModel>EmployeeCity}"></Text>
+												<Text text="{dataModel>EmployeeState}"></Text>
+												<Text text="{dataModel>EmployeePostalCode}"></Text>
+												<Text text="{dataModel>EmployeeAddressType}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+							<IconTabFilter id="form3DataInView5" icon="sap-icon://table-column" iconColor="Negative" text="Health">
+								<Table id="form3DataTableInView5Id" items="{dataModel>/HealthIconTabFilterEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+											<OverflowToolbar>
+												<content>
+													<Title text="{i18n>healthIconTabFilterTableId}"></Title>
+												</content>
+											</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteEmployeeHealthDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveEmployeeFromEmployeeHealthDetailsTable" enabled="false"></Button>
+											<Button id="sortEmployeeHealthDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortEmployeeHealthDetailsTable"></Button>
+											<Button id="groupByEmployeeHealthDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByEmployeeHealthTable"></Button>
+											<SearchField id="searchInEmployeeHealthDetailsId" width="300px" search="_OnSearchFilterEmployeeHealthDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Id"></Text>
+										</Column>
+										<Column>
+											<Text text="Allergies"></Text>
+										</Column>
+										<Column>
+											<Text text="Allergies List"></Text>
+										</Column>
+										<Column>
+											<Text text="Medicines List"></Text>
+										</Column>
+										<Column>
+											<Text text="City"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenEmployeeHealthFragment" type="Active">
+											<cells>
+												<Text text="{dataModel>EmployeeId}"></Text>
+												<Text text="{dataModel>MedicalInsurance}"></Text>
+												<Text text="{dataModel>AllergiesList}"></Text>
+												<Text text="{dataModel>MedicationsList}"></Text>
+												<Text text="{dataModel>EmployeeCity}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+							<IconTabFilter id="form4DataInView5" icon="sap-icon://multi-select" iconColor="Default" text="Nominee">
+								<Table id="form4DataTableInView5Id" items="{dataModel>/NomineeIconTabFilterEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+											<OverflowToolbar>
+												<content>
+													<Title text="{i18n>nomineeIconTabFilterTableId}"></Title>
+												</content>
+											</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteEmployeeNomineeDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveEmployeeFromEmployeeNomineeDetailsTable" enabled="false"></Button>
+											<Button id="sortEmployeeNomineeDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortEmployeeNomineeDetailsTable"></Button>
+											<Button id="groupByEmployeeNomineeDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByEmployeeNomineeTable"></Button>
+											<SearchField id="searchInEmployeeNomineeDetailsId" width="300px" search="_OnSearchFilterEmployeeNomineeDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Id"></Text>
+										</Column>
+										<Column>
+											<Text text="Name"></Text>
+										</Column>
+										<Column>
+											<Text text="Age"></Text>
+										</Column>
+										<Column>
+											<Text text="Relationship"></Text>
+										</Column>
+										<Column>
+											<Text text="City"></Text>
+										</Column>
+										<Column>
+											<Text text="State"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenEmployeeNomineeFragment" type="Active">
+											<cells>
+												<Text text="{dataModel>EmployeeId}"></Text>
+												<Text text="{dataModel>NomineeName}"></Text>
+												<Text text="{dataModel>NomineeAge}"></Text>
+												<Text text="{dataModel>NomineeRelationship}"></Text>
+												<Text text="{dataModel>NomineeCity}"></Text>
+												<Text text="{dataModel>NomineeState}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+							<IconTabFilter id="form5DataInView5" icon="sap-icon://table-view" iconColor="Critical" text="Experience">
+								<Table id="form5DataTableInView5Id" items="{dataModel>/ExperienceIconTabFilterEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+											<OverflowToolbar>
+											<content>
+												<Title text="{i18n>experienceIconTabFilterTableId}"></Title>
+											</content>
+										</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteEmployeeExperienceDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveEmployeeFromEmployeeExperienceDetailsTable" enabled="false"></Button>
+											<Button id="sortEmployeeExperienceDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortEmployeeExperienceDetailsTable"></Button>
+											<Button id="groupByEmployeeExperienceDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByEmployeeExperienceTable"></Button>
+											<SearchField id="searchInEmployeeExperienceDetailsId" width="300px" search="_OnSearchFilterEmployeeExperienceDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Id"></Text>
+										</Column>
+										<Column>
+											<Text text="Name"></Text>
+										</Column>
+										<Column>
+											<Text text="Department"></Text>
+										</Column>
+										<Column>
+											<Text text="Company"></Text>
+										</Column>
+										<Column>
+											<Text text="Experience"></Text>
+										</Column>
+										<Column>
+											<Text text="Skills"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenEmployeeExperienceFragment" type="Active">
+											<cells>
+												<Text text="{dataModel>EmployeeId}"></Text>
+												<Text text="{dataModel>EmployeeName}"></Text>
+												<Text text="{dataModel>EmployeeDepartment}"></Text>
+												<Text text="{dataModel>EmployeeCompany}"></Text>
+												<Text text="{dataModel>EmployeeExperience}"></Text>
+												<Text text="{dataModel>EmployeeSkills}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+							<IconTabFilter id="form6DataInView5" icon="sap-icon://multiselect-none" iconColor="Negative" text="Knowledge">
+								<Table id="form6DataTableInView5Id" items="{dataModel>/KnowledgeIconTabFilterEntity}" mode="MultiSelect">
+									<headerToolbar>
+										<Toolbar>
+											<OverflowToolbar>
+											<content>
+												<Title text="{i18n>knowledgeIconTabFilterTableId}"></Title>
+											</content>
+										</OverflowToolbar>
+											<ToolbarSpacer/>
+											<Button id="deleteEmployeeKnowledgeDetailsButtonId" icon="sap-icon://delete" tooltip="Delete" type="Reject"
+												press="_OnDeleteRemoveEmployeeFromEmployeeKnowledgeDetailsTable" enabled="false"></Button>
+											<Button id="sortEmployeeKnowledgeDetailsTableButtonId" icon="sap-icon://sort" tooltip="Sort" type="Emphasized"
+												press="_OnPressSortEmployeeKnowledgeDetailsTable"></Button>
+											<Button id="groupByEmployeeKnowledgeDetailsTableButtonId" icon="sap-icon://group-2" tooltip="GroupBy" type="Emphasized"
+												press="_OnPressGroupByEmployeeKnowledgeTable"></Button>
+											<SearchField id="searchInEmployeeKnowledgeDetailsId" width="300px" search="_OnSearchFilterEmployeeKnowledgeDetailsTable"></SearchField>
+											<!--</ToolbarSpacer>-->
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column>
+											<Text text="Id"></Text>
+										</Column>
+										<Column>
+											<Text text="Date-of-Joining"></Text>
+										</Column>
+										<!--<Column>-->
+										<!--	<Text text="Skills"></Text>-->
+										<!--</Column>-->
+										<Column>
+											<Text text="Languages"></Text>
+										</Column>
+										<!--<Column>-->
+										<!--	<Text text="Certified"></Text>-->
+										<!--</Column>-->
+										<Column>
+											<Text text="Experience"></Text>
+										</Column>
+										<Column>
+											<Text text="Previous CTC"></Text>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem press="_OnPressRowOpenEmployeeKnowledgeFragment" type="Active">
+											<cells>
+												<Text text="{dataModel>EmployeeId}"></Text>
+												<Text text="{dataModel>EmployeeDateOfJoining}"></Text>
+												<Text text="{dataModel>EmployeeLanguages}"></Text>
+												<Text text="{dataModel>EmployeeExperience}"></Text>
+												<Text text="{dataModel>EmployeeCTC}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

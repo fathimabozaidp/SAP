@@ -1,0 +1,91 @@
+<mvc:View controllerName="com.dpzeightviews.controller.employeeform" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
+			xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Employees - Digital Personas Pvt. Ltd." navButtonPress="_OnPressBackButtonGoToGraduateForm" showNavButton="true">
+				<content>
+					<f:SimpleForm
+					id="employeeDetailsFormId"
+						title="Employee Details Form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true">
+						<f:content>
+							<Label text="Name"></Label>
+							<Input id="eNameId" placeholder="Enter Employee Name" required="true"></Input>
+							
+							<Label text="Id"></Label>
+							<Input id="eId" placeholder="Enter Employee Id" required="true"></Input>
+							
+							<Label text="Age" required="true"></Label>
+							<Select 
+								id="eAgeId"
+								forceSelection = "false" 
+								items="{
+										path: '/EmployeeAgeGroup',
+										sorter: { path: 'Age' }
+									}"
+							>
+								<core:Item key="{AgeId}" text="{Age}" />
+							</Select>
+							
+							<Label text="Mobile Number"></Label>
+							<Input id="eMobileId" placeholder="Enter Employee Mobile Number" required="true"></Input>
+							
+							<Label text="Email"></Label>
+							<Input id="eEmailId" placeholder="Enter Employee Email" required="true"></Input>
+							
+							<!--//textarea-->
+							<Label text="Address"></Label>
+							<TextArea id="eAddressId" placeholder="Enter address here"/>
+							
+							<Label text="Company Name" required="true"></Label>
+							<Select 
+							id="eCompanyId"
+								forceSelection = "false" 
+								items="{
+										path: '/EmployeeCompany',
+										sorter: { path: 'CompanyName' }
+									}"
+							>
+								<core:Item key="{CompanyId}" text="{CompanyName}" />
+							</Select>
+						
+							<Label text="Location"></Label>
+							<ComboBox required="true"
+							id="eLocationId"
+							items="{
+										path: '/EmployeeLocation',
+										sorter: { path: 'LocationName' }
+									}"
+							>
+								<core:Item key="{LocationId}" text="{LocationName}" />
+							</ComboBox>
+						
+						</f:content>
+					</f:SimpleForm>
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Submit" id="submitEmployeeFormButtonId" class="sapUiLargeMarginBegin" type="Emphasized" press="_OnPressSubmitButtonDisplayEmployeeTable"></Button>
+					</FlexBox>
+	
+				</content>
+				<footer>
+					<Bar>
+						<contentRight>
+							<Button text="School Form" type="Emphasized" press="_OnPressSchoolGoToSchoolFormView"></Button>
+							<Button text="Intermediate Form" type="Emphasized" press="_OnPressIntermediateGoToIntermediateFormView"></Button>
+							<Button text="Graduate Form" type="Emphasized" press="_OnPresGraduateGoToGraduateFormView"></Button>
+						</contentRight>
+					</Bar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

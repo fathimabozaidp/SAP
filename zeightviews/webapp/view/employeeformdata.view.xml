@@ -1,0 +1,177 @@
+<mvc:View controllerName="com.dpzeightviews.controller.employeeformdata" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m"  xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<App>
+		<pages>
+			<Page title="Employees - Digital Personas Pvt. Ltd." navButtonPress="_OnPressBackButtonGoToEmployeeForm" showNavButton="true">
+				<content>
+					<Table id="employeeTableId" items="{multiFormModel>/EmployeeData}" selectionChange="_OnPressRowDisplayEditEmployeeFormBelowTable"
+							mode="SingleSelectMaster" inset="true">
+					<headerToolbar>
+						<OverflowToolbar>
+							<content>
+								<Title text="Employee Details"></Title>
+							</content>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Name"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Id"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Age"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Mobile"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Email"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Address"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Company"/>
+						</Column>
+						<Column hAlign="Center" vAlign="Middle">
+							<Label text="Location"/>
+						</Column>
+						<Column  hAlign="Center" vAlign="Middle">
+							<Label text="Actions"/>
+						</Column>
+					</columns>
+					<items>
+						<ColumnListItem type ="Active">
+							<cells>
+								<Text text="{multiFormModel>Name}"></Text>
+								<Text text="{multiFormModel>Id}"></Text>
+								<Text text="{multiFormModel>Age}"></Text>
+								<Text text="{multiFormModel>Mobile}"></Text>
+								<Text text="{multiFormModel>Email}"></Text>
+								<Text text="{multiFormModel>Address}"></Text>
+								<Text text="{multiFormModel>Company}"></Text>
+								<Text text="{multiFormModel>Location}"></Text>
+								<!--<Text text="{multiFormModel>Place}"></Text>-->
+								<HBox  justifyContent="Center">
+									<Button icon="sap-icon://hint" type="Emphasized" tooltip="Information" class="sapUiSmallMarginBegin" press="_OnPressInfoButtonDisplayLabelAndTextInEmployeeFormData" ></Button>
+									<Button icon="sap-icon://delete" type="Reject" tooltip="Delete" class="sapUiSmallMarginBegin" press="_OnPressDeleteButtonDeleteRowInEmployeeFormData"></Button>
+								</HBox>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+					<f:SimpleForm
+						id="employeeDetailsEditFormId"
+						title="Edit Employee Details Form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true"
+						visible="false">
+						<f:content>
+							<Label text="Name"></Label>
+							<Input id="eEdittedNameId" placeholder="Enter Employee Name" required="true" value="{multiFormModel>/EdittedEmployeeData/Name}"></Input>
+							
+							<Label text="Id"></Label>
+							<Input id="eEdittedId" placeholder="Enter Employee Id" required="true"  value="{multiFormModel>/EdittedEmployeeData/Id}" editable="false"></Input>
+							
+							<Label text="Age" required="true"></Label>
+							<Select 
+								id="eEdittedAgeId"
+								forceSelection = "true"
+								selectedKey ="{multiFormModel>/EdittedEmployeeData/Age}"
+								items="{
+										path: '/EmployeeAgeGroup',
+										sorter: { path: 'Age' }
+									}"
+							>
+								<core:Item key="{AgeId}" text="{Age}" />
+							</Select>
+							
+							<Label text="Mobile Number"></Label>
+							<Input id="eEdittedMobileId" placeholder="Enter Employee Mobile Number" required="true"  value="{multiFormModel>/EdittedEmployeeData/Mobile}"></Input>
+							
+							<Label text="Email"></Label>
+							<Input id="eEdittedEmailId" placeholder="Enter Employee Email" required="true" value="{multiFormModel>/EdittedEmployeeData/Email}"></Input>
+							
+							<!--//textarea-->
+							<Label text="Address"></Label>
+							<TextArea id="eEdittedAddressId" placeholder="Enter address here"  value="{multiFormModel>/EdittedEmployeeData/Address}"/>
+							
+							<Label text="Company Name" required="true"></Label>
+							<Select 
+							id="eEdittedCompanyId"
+							forceSelection = "true"
+							selectedKey = "{multiFormModel>/EdittedEmployeeData/Company}" 
+								items="{
+										path: '/EmployeeCompany',
+										sorter: { path: 'CompanyName' }
+									}"
+							>
+								<core:Item key="{CompanyId}" text="{CompanyName}" />
+							</Select>
+						
+							<Label text="Location"></Label>
+							<ComboBox 
+							selectedKey="{multiFormModel>/EdittedEmployeeData/Location}"
+							required="true"
+							id="eEdittedLocationId"
+							items="{
+										path: '/EmployeeLocation',
+										sorter: { path: 'LocationName' }
+									}"
+							>
+								<core:Item key="{LocationId}" text="{LocationName}" />
+							</ComboBox>
+						</f:content>
+					</f:SimpleForm>
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Save" id="saveEdittedEmployeeFormButtonId" class="sapUiLargeMarginBegin" type="Emphasized" press="_OnPressSaveButtonUpdateChangesInTableAbove" visible="false"></Button>
+					</FlexBox>
+					<f:SimpleForm
+						id="employeeDetailsLabelTextFormId"
+						title="Employee's Details" 
+						visible="false">
+					<f:content>
+						<Label text="Name"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Name}"/>
+						
+						<Label text="Id"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Id}"/>
+						
+						<Label text="Age"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Name}"/>
+						
+						<Label text="Mobile Number"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Age}"/>	
+						
+						<Label text="Email"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Email}"/>
+						
+						<Label text="Address"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Address}"/>
+						
+						<Label text="Company Name"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Company}"/>
+						
+						<Label text="Location"></Label>
+						<Text text="{multiFormModel>/EdittedEmployeeData/Location}"/>
+						
+					</f:content>
+				</f:SimpleForm>
+				<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Cancel" id="cancelButtonId_InEmployeeFormDataLabelText" class="sapUiLargeMarginBegin" type="Reject" press="_OnPressCancelButtonHideEmployeeInfoForm" visible="false"></Button>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

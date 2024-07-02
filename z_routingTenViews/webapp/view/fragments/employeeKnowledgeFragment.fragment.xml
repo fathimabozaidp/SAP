@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<Dialog id="employeeKnowledgeFragmentDialogId" title="{i18n>employeeKnowledgeFragmentDialogTitle}" contentWidth="1000px">
+		
+		
+		
+		
+		<VBox id="dynamicFormInKnowledgeFragmentVBoxId" visible="true"/>
+		
+		
+		<FlexBox justifyContent="Center">
+			<VBox id="dynamicFormInKnowledgeFragmentSubmitButtonVBoxInFlexBoxId" class="sapUiLargeMarginBegin" visible="true"/>
+		</FlexBox>
+		
+		
+		
+		
+		
+		<HBox alignItems="Center" justifyContent="Center">
+			<Button id="saveEditEmployeeKnowledgeDetailsButtonId" text="{i18n>saveButtonText}" type="Emphasized" press="_OnPressSaveEdittedEmployeeKnowledgeDetails"></Button>
+		</HBox>
+		<endButton>
+			<Button id="editEmployeeKnowledgeFragmentCloseButtonId" text="Close" type="Reject" press="_OnClickCloseEditEmployeeKnowledgeFragment"></Button>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

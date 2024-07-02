@@ -1,0 +1,94 @@
+<mvc:View controllerName="com.dpzeightviews.controller.graduateformdata" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m"  xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="Ravindra College of Engineering for Women's" navButtonPress="_OnPressBackButtonGoToGraduateForm" showNavButton="true">
+				<content>
+					<f:SimpleForm
+						id="graduationDetailsEditFormId"
+						title="Edit Student Details Form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true"
+						visible="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Input id="gEdittedNameId" placeholder="Enter your name" required="true" value="{multiFormModel>/EdittedGraduateData/Name}"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Input id="gEdittedRollNoId" placeholder="Enter Roll No"  required="true" value="{multiFormModel>/EdittedGraduateData/RollNo}"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<DatePicker id="gEdittedDateOfBirthId" placeholder="Enter Date" required="true" displayFormat="dd.MM.YYYY" valueFormat="dd.MM.YYYY"  change="calculateEdittedAge" value="{multiFormModel>/EdittedGraduateData/DOB}"/>
+							
+							<Label text="Age" design="Bold" required="true"/>
+							<Input id="gEdittedAgeId" placeholder="Age" editable="false" value="{multiFormModel>/EdittedGraduateData/Age}" />
+							
+							<Label text="Branch" design="Bold"/>
+							<Input id="gEdittedBranchId" placeholder="Enter Branch" required="true" value="{multiFormModel>/EdittedGraduateData/Branch}"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Input id="gEdittedEmailId" placeholder="Enter Email" required="true" value="{multiFormModel>/EdittedGraduateData/Email}"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Input id="gEdittedFatherNameId" placeholder="Enter Father's Name" required="true" value="{multiFormModel>/EdittedGraduateData/FatherName}"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Input id="gEdittedMobileId" placeholder="Enter Father's Mobile Number"  required="true" value="{multiFormModel>/EdittedGraduateData/FatherMobile}"/>
+							
+							<Label text="Place" design="Bold"/>
+							<Input id="gEdittedPlaceId" placeholder="Enter Place"  required="true" value="{multiFormModel>/EdittedGraduateData/Place}"/>
+						</f:content>
+					</f:SimpleForm>
+						<FlexBox justifyContent="Center" alignItems="Center">
+							<Button text="Save" id="saveEdittedGraduateFormButtonId" class="sapUiLargeMarginBegin" type="Emphasized" press="_OnPressSaveButtonGoToGraduateForm" />
+						</FlexBox>
+						<f:SimpleForm
+							id="graduationDetailsLabelTextFormId"
+							title="Student's Details" 
+							visible="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/Name}"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/RollNo}"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/DOB}"/>
+							
+							<Label text="Age" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/Age}"/>
+							
+							<Label text="Branch" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/Branch}"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/Email}"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/FatherName}"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/FatherMobile}"/>
+							
+							<Label text="Place" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedGraduateData/Place}"/>
+						</f:content>
+					</f:SimpleForm>	
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Cancel" id="cancelButtonId_InGraduateFormDataLabelText" class="sapUiLargeMarginBegin" type="Reject" press="_OnPressCancelButtonGoToGraduateForm" visible="false"></Button>
+					</FlexBox>
+				</content>
+				
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

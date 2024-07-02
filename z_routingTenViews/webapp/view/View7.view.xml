@@ -1,0 +1,56 @@
+<mvc:View controllerName="com.dpz_routingTenViews.controller.View7" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" navButtonPress="_OnPressBackGoToView1" showNavButton="true">
+				<content>
+					<IconTabHeader>
+						<items>
+							<!--sap-icon://person-placeholder-->
+							<IconTabFilter id="form5BankFormIconTabHeader" icon="sap-icon://account" iconColor="Positive" text="Customer Details" key="form5DataITH"/>
+						</items>
+					</IconTabHeader>
+					<form:SimpleForm
+						id="bankCustomerDetailsFormId"
+						layout="ResponsiveGridLayout" 
+						editable="true"
+						labelSpanXL="5" 
+						labelSpanL="5" 
+						labelSpanM="5" 
+						labelSpanS="3" 
+						emptySpanXL="4"
+						emptySpanL="4"
+						emptySpanM="4" 
+						emptySpanS="4"
+						visible="false"
+						>
+						
+						<Label text="Name"></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Name}"></Text>
+						
+						<Label text="Id" ></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Id}"></Text>
+						
+						<Label text="Age" ></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Age}"></Text>
+							
+						<Label text="Pancard"></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Pancard}"></Text>
+							
+						<Label text="Gender" ></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Gender}"></Text>
+						
+						<Label text="AccountType"></Label>
+						<Text text="{dataModel>/BankDetailsEntity/AccountType}"></Text>
+						
+						<Label text="Benefits"></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Benefits}"></Text>
+						
+						<Label text="Branch"></Label>
+						<Text text="{dataModel>/BankDetailsEntity/Branch}"></Text>
+					</form:SimpleForm>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

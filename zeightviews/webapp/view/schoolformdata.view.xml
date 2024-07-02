@@ -1,0 +1,87 @@
+<mvc:View controllerName="com.dpzeightviews.controller.schoolformdata" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+	<App>
+		<pages>
+			<Page title="St.Joseph's E.M. High School" navButtonPress="_OnPressBackButtonGoToSchoolForm" showNavButton="true">
+				<content>
+					<f:SimpleForm
+						id="studentDetailsEditFormId"
+						title="Edit Student Details Form" 
+						layout="ResponsiveGridLayout"
+						labelSpanS = "12"
+						labelSpanL = "4"
+						labelSpanXL = "-1"
+						labelSpanM = "5"
+						emptySpanS = "0"
+						emptySpanM = "1"
+						emptySpanL = "4"
+						emptySpanXL = "-1"
+						editable="true"
+						visible="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Input id="sEdittedNameId" placeholder="Enter your name" required="true" value="{multiFormModel>/EdittedSchoolData/Name}"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Input id="sEdittedRollNoId" placeholder="Enter Roll No" editable="false" value="{multiFormModel>/EdittedSchoolData/RollNo}"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<DatePicker id="sEdittedDateOfBirthId" placeholder="Enter Date" value="{multiFormModel>/EdittedSchoolData/DOB}" displayFormat="dd.MM.YYYY" valueFormat="dd.MM.YYYY"/>
+							
+							<Label text="Class" design="Bold"/>
+							<Input id="sEdittedClassId" placeholder="Enter Class" value="{multiFormModel>/EdittedSchoolData/Class}"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Input id="sEdittedFatherNameId" placeholder="Enter Father's Name" required="true" value="{multiFormModel>/EdittedSchoolData/FatherName}"/>
+							
+							<Label text="Mother's Name" design="Bold"/>
+							<Input id="sEdittedMotherNameId" placeholder="Enter Mother's Name" value="{multiFormModel>/EdittedSchoolData/MotherName}"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Input id="sEdittedMobileId" placeholder="Enter Father's Mobile Number"  required="true" value="{multiFormModel>/EdittedSchoolData/FatherMobile}"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Input id="sEdittedEmailId" placeholder="Enter Email" required="true" value="{multiFormModel>/EdittedSchoolData/Email}"/>
+						</f:content>
+					</f:SimpleForm>
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Save" id="saveEdittedSchoolFormButtonId" class="sapUiLargeMarginBegin" type="Emphasized" press="_OnPressSaveButtonGoToSchoolForm" visible="false"></Button>
+					</FlexBox>
+					<f:SimpleForm
+						id="studentDetailsLabelTextFormId"
+						title="Student's Information" 
+						visible="false">
+						<f:content>
+							<Label text="Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/Name}"/>
+							
+							<Label text="Roll No" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/RollNo}"/>
+							
+							<Label text="D-O-B" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/DOB}"/>
+							
+							<Label text="Class" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/Class}"/>
+							
+							<Label text="Father's Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/FatherName}"/>
+							
+							<Label text="Mother's Name" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/MotherName}"/>
+							
+							<Label text="Father's Mobile" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/FatherMobile}"/>
+							
+							<Label text="Email" design="Bold"/>
+							<Text text="{multiFormModel>/EdittedSchoolData/Email}"/>
+						</f:content>
+					</f:SimpleForm>
+					<FlexBox justifyContent="Center" alignItems="Center">
+						<Button text="Cancel" id="cancelButtonId_InSchoolFormDataLabelText" class="sapUiLargeMarginBegin" type="Reject" press="_OnPressCancelButtonGoToSchoolForm" visible="false"></Button>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,65 @@
+<mvc:View controllerName="com.dpzemployeeHrForm.controller.viewHrActions" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="Employee Approve/Reject Status" showNavButton="true" navButtonPress="_OnBackButtonPressGoToHrForm">
+				<content>
+					<Table id="employeeStatusTableId" items="{employeeHrModel>/FinalViewHrData}" mode="None" alternateRowColors="true" >
+						<headerToolbar>
+							<OverflowToolbar>
+								<content>
+									<Title text="Employee Status"></Title>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="Name"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="Id"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="Email"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="Mobile"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="DOB"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="DOJ"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="Experience"/>
+							</Column>
+								<Column hAlign="Center" vAlign="Middle">
+								<Label text="Registration Id"/>
+							</Column>
+							<Column hAlign="Center" vAlign="Middle">
+								<Label text="Status"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem type ="Active">
+								<cells>
+									<Text text="{employeeHrModel>Name}"></Text>
+									<Text text="{employeeHrModel>Id}"></Text>
+									<Text text="{employeeHrModel>Email}"></Text>
+									<Text text="{employeeHrModel>Mobile}"></Text>
+									<Text text="{employeeHrModel>DateOfBirth}"></Text>
+									<Text text="{employeeHrModel>DateOfJoining}"></Text>
+									<Text text="{employeeHrModel>Experience}"></Text>
+									<Text text="{employeeHrModel>RegistrationId}"></Text>
+									<!--<Text text="{employeeHrModel>}"></Text>-->
+									<Text text="{employeeHrModel>Status}"></Text>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,78 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:uxap="sap.uxap"
+>
+	<Dialog id="approveRejectEmployeeDialogId" title="Digital Persons's Pvt. Ltd." contentWidth="700px">
+		<uxap:ObjectPageLayout>
+			<uxap:headerTitle>
+				<uxap:ObjectPageDynamicHeaderTitle>
+					<uxap:expandedHeading>
+						<Title />
+					</uxap:expandedHeading>
+				</uxap:ObjectPageDynamicHeaderTitle>
+			</uxap:headerTitle>
+			<uxap:sections>
+				<uxap:ObjectPageSection>
+					<uxap:subSections>
+						<uxap:ObjectPageSubSection>
+							<VBox alignItems="Center" justifyContent="Center">	
+								<HBox>
+									<!--Label-->
+									<HBox>
+										<VBox justifyContent="Center" alignContent="Center">
+											<Label text="RegistrationId" required="true" class="sapUiTinyMarginEnd"></Label>
+										</VBox>
+									</HBox>
+									<!--Input-->
+									<HBox class="sapUiMarginLargeBegin"  >
+										<HBox justifyContent="Start" alignItems="Start" >
+											<Input id="employeeRegistrationId" class="sapUiMediumMarginBegin" required="true" editable="false" value="{employeeHrModel>/ViewHrData/RegistrationId}"></Input>
+										</HBox>
+									</HBox>
+								</HBox>	
+								<HBox>
+										<!--Label-->
+										<HBox>
+											<VBox justifyContent="Center" alignContent="Center">
+												<Label text="Comments" required="true" class="sapUiSmallMarginEnd"></Label>
+											</VBox>
+										</HBox>
+										<!--Input-->
+										<HBox class="sapUiMarginLargeBegin"  >
+											<HBox justifyContent="Start" alignItems="Start" >
+												<TextArea id="employeeCommentsId" required="true" class="sapUiLargeMarginBegin"></TextArea>
+											</HBox>
+										</HBox>
+									</HBox>
+								<HBox>
+									<!--Label-->
+									<HBox>
+										<VBox justifyContent="Center" alignContent="Center">
+											<Label text="Status" required="true" class="sapUiLargeMarginEnd"></Label>
+										</VBox>
+									</HBox>
+									<!--Input-->
+									<HBox class="sapUiMarginLargeBegin"  >
+										<HBox justifyContent="Start" alignItems="Start" >
+											<Input id="employeeStatusId" class="sapUiLargeMarginBegin" required="true" editable="false" value="{employeeHrModel>/ViewHrData/Status}"></Input>
+										</HBox>
+									</HBox>
+								</HBox>
+									<!--<Label></Label>-->
+									<!--<FlexBox alignContent="Center" justifyContent="Center" >-->
+									<HBox alignContent="Center" alignItems="Center" class="sapUiLargeMarginBegin sapUiSmallMarginTop sapUiNoContentPadding">
+										<Button id="submitEmployeeStatusToViewHrTable" text="Submit" type="Emphasized" press="_OnSubmitPushDetailsToHrTableInViewHr" class="sapUiLargeMarginBegin"></Button>		
+									</HBox>
+							</VBox>
+						</uxap:ObjectPageSubSection>
+					</uxap:subSections>
+				</uxap:ObjectPageSection>
+			</uxap:sections>
+		</uxap:ObjectPageLayout>
+		<endButton>
+			<Button text="close" press="_OnPressCloseFragment" type="Reject"></Button>
+		</endButton>
+	</Dialog>
+	
+</core:FragmentDefinition>
